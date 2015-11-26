@@ -15,7 +15,11 @@
 		2EC63DDF1BC0A292001521F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EC63DDD1BC0A292001521F7 /* LaunchScreen.storyboard */; };
 		2EC63DEA1BC0A292001521F7 /* Decide_decide_what_to_doTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63DE91BC0A292001521F7 /* Decide_decide_what_to_doTests.m */; };
 		2EC63DF51BC0A292001521F7 /* Decide_decide_what_to_doUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63DF41BC0A292001521F7 /* Decide_decide_what_to_doUITests.m */; };
-		2EC63E081BC0A647001521F7 /* DCForMeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63E071BC0A647001521F7 /* DCForMeObject.m */; settings = {ASSET_TAGS = (); }; };
+		2EC63E081BC0A647001521F7 /* DCForMeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63E071BC0A647001521F7 /* DCForMeObject.m */; };
+		8CA5CBF51C0567380020E58A /* QuickDecideObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBF41C0567380020E58A /* QuickDecideObject.m */; };
+		8CA5CBFF1C056AC60020E58A /* NSNumber+RoundingUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBFE1C056AC60020E58A /* NSNumber+RoundingUp.m */; };
+		8CA5CC051C068BEF0020E58A /* DCForGroupObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC041C068BEF0020E58A /* DCForGroupObject.m */; };
+		8CA5CC091C0694270020E58A /* RoleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC081C0694270020E58A /* RoleObject.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +59,16 @@
 		2EC63E061BC0A647001521F7 /* DCForMeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCForMeObject.h; path = models/DCForMeObject.h; sourceTree = "<group>"; };
 		2EC63E071BC0A647001521F7 /* DCForMeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCForMeObject.m; path = models/DCForMeObject.m; sourceTree = "<group>"; };
 		2EC63E0B1BC0AC75001521F7 /* DCUserDefaultKeyConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUserDefaultKeyConstants.h; sourceTree = "<group>"; };
+		8CA5CBF31C0567380020E58A /* QuickDecideObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickDecideObject.h; path = models/QuickDecideObject.h; sourceTree = "<group>"; };
+		8CA5CBF41C0567380020E58A /* QuickDecideObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickDecideObject.m; path = models/QuickDecideObject.m; sourceTree = "<group>"; };
+		8CA5CBFD1C056AC60020E58A /* NSNumber+RoundingUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+RoundingUp.h"; path = "vendor/extensions/NSNumber+RoundingUp.h"; sourceTree = "<group>"; };
+		8CA5CBFE1C056AC60020E58A /* NSNumber+RoundingUp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSNumber+RoundingUp.m"; path = "vendor/extensions/NSNumber+RoundingUp.m"; sourceTree = "<group>"; };
+		8CA5CC011C0595610020E58A /* ShouldGenerateResultCount.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ShouldGenerateResultCount.h; path = vendor/protocols/ShouldGenerateResultCount.h; sourceTree = "<group>"; };
+		8CA5CC021C05969C0020E58A /* ShouldSaveOutputToFile.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = ShouldSaveOutputToFile.h; path = vendor/protocols/ShouldSaveOutputToFile.h; sourceTree = "<group>"; };
+		8CA5CC031C068BEF0020E58A /* DCForGroupObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCForGroupObject.h; path = models/DCForGroupObject.h; sourceTree = "<group>"; };
+		8CA5CC041C068BEF0020E58A /* DCForGroupObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCForGroupObject.m; path = models/DCForGroupObject.m; sourceTree = "<group>"; };
+		8CA5CC071C0694270020E58A /* RoleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoleObject.h; path = models/Role/RoleObject.h; sourceTree = "<group>"; };
+		8CA5CC081C0694270020E58A /* RoleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoleObject.m; path = models/Role/RoleObject.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,8 +119,8 @@
 		2EC63DCE1BC0A292001521F7 /* Decide:decide what to do */ = {
 			isa = PBXGroup;
 			children = (
-				2EC63E091BC0AB64001521F7 /* Constants */,
-				2EC63E051BC0A2E5001521F7 /* vendor */,
+				2EC63E091BC0AB64001521F7 /* constants */,
+				2EC63E051BC0A2E5001521F7 /* library */,
 				2EC63E041BC0A2DF001521F7 /* models */,
 				2EC63E031BC0A2DB001521F7 /* views */,
 				2EC63E021BC0A2CD001521F7 /* controllers */,
@@ -166,25 +180,28 @@
 		2EC63E041BC0A2DF001521F7 /* models */ = {
 			isa = PBXGroup;
 			children = (
-				2EC63E0D1BC0ACD5001521F7 /* Decide For Group */,
+				8CA5CBF21C05671E0020E58A /* Quick Decide */,
 				2EC63E0C1BC0ACC6001521F7 /* Decide For Me */,
+				2EC63E0D1BC0ACD5001521F7 /* Decide For Group */,
 			);
 			name = models;
 			sourceTree = "<group>";
 		};
-		2EC63E051BC0A2E5001521F7 /* vendor */ = {
+		2EC63E051BC0A2E5001521F7 /* library */ = {
 			isa = PBXGroup;
 			children = (
+				8CA5CC001C05950D0020E58A /* Protocols */,
+				8CA5CBF61C0569BF0020E58A /* extensions */,
 			);
-			name = vendor;
+			name = library;
 			sourceTree = "<group>";
 		};
-		2EC63E091BC0AB64001521F7 /* Constants */ = {
+		2EC63E091BC0AB64001521F7 /* constants */ = {
 			isa = PBXGroup;
 			children = (
 				2EC63E0B1BC0AC75001521F7 /* DCUserDefaultKeyConstants.h */,
 			);
-			name = Constants;
+			name = constants;
 			sourceTree = "<group>";
 		};
 		2EC63E0C1BC0ACC6001521F7 /* Decide For Me */ = {
@@ -199,8 +216,47 @@
 		2EC63E0D1BC0ACD5001521F7 /* Decide For Group */ = {
 			isa = PBXGroup;
 			children = (
+				8CA5CC061C06940B0020E58A /* Roles */,
+				8CA5CC031C068BEF0020E58A /* DCForGroupObject.h */,
+				8CA5CC041C068BEF0020E58A /* DCForGroupObject.m */,
 			);
 			name = "Decide For Group";
+			sourceTree = "<group>";
+		};
+		8CA5CBF21C05671E0020E58A /* Quick Decide */ = {
+			isa = PBXGroup;
+			children = (
+				8CA5CBF31C0567380020E58A /* QuickDecideObject.h */,
+				8CA5CBF41C0567380020E58A /* QuickDecideObject.m */,
+			);
+			name = "Quick Decide";
+			sourceTree = "<group>";
+		};
+		8CA5CBF61C0569BF0020E58A /* extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8CA5CBFD1C056AC60020E58A /* NSNumber+RoundingUp.h */,
+				8CA5CBFE1C056AC60020E58A /* NSNumber+RoundingUp.m */,
+			);
+			name = extensions;
+			sourceTree = "<group>";
+		};
+		8CA5CC001C05950D0020E58A /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				8CA5CC011C0595610020E58A /* ShouldGenerateResultCount.h */,
+				8CA5CC021C05969C0020E58A /* ShouldSaveOutputToFile.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		8CA5CC061C06940B0020E58A /* Roles */ = {
+			isa = PBXGroup;
+			children = (
+				8CA5CC071C0694270020E58A /* RoleObject.h */,
+				8CA5CC081C0694270020E58A /* RoleObject.m */,
+			);
+			name = Roles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,9 +389,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CA5CC091C0694270020E58A /* RoleObject.m in Sources */,
 				2EC63DD71BC0A292001521F7 /* ViewController.m in Sources */,
+				8CA5CBF51C0567380020E58A /* QuickDecideObject.m in Sources */,
+				8CA5CC051C068BEF0020E58A /* DCForGroupObject.m in Sources */,
 				2EC63E081BC0A647001521F7 /* DCForMeObject.m in Sources */,
 				2EC63DD41BC0A292001521F7 /* AppDelegate.m in Sources */,
+				8CA5CBFF1C056AC60020E58A /* NSNumber+RoundingUp.m in Sources */,
 				2EC63DD11BC0A292001521F7 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -562,6 +622,7 @@
 				2EC63DFB1BC0A292001521F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2EC63DFC1BC0A292001521F7 /* Build configuration list for PBXNativeTarget "Decide:decide what to doTests" */ = {
 			isa = XCConfigurationList;
@@ -570,6 +631,7 @@
 				2EC63DFE1BC0A292001521F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2EC63DFF1BC0A292001521F7 /* Build configuration list for PBXNativeTarget "Decide:decide what to doUITests" */ = {
 			isa = XCConfigurationList;
@@ -578,6 +640,7 @@
 				2EC63E011BC0A292001521F7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,14 +7,49 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ShouldGenerateResultCount.h"
+#import "ShouldSaveOutputToFile.h"  
 
-@interface DCForMeObject : NSObject
+@interface DCForMeObject : NSObject<ShouldGenerateResultCount,ShouldSaveOutputToFile>
 
 /**
- * @brief
+ * @brief   Designated initializer
  */
 
 -(id)initWithActivityList:(NSArray*)list;
+
+/**
+ 
+ * @brief   Add another activity
+ 
+ * @param   Activity name
+ 
+ * @return  void
+ 
+ */
+-(void)addActivity:(NSString*)activity;
+
+/**
+ 
+ * @brief   Remove an activity
+ 
+ * @param   Activity name
+ 
+ * @return  void
+ 
+ */
+-(void)removeActivity:(NSString*)activity;
+
+/**
+ 
+ * @brief   Get lists of activities in NSString
+ 
+ * @param   nil
+ 
+ * @return  NSArray
+ 
+ */
+-(NSArray*)getListOfActivities;
 
 /**
  
@@ -49,4 +84,5 @@
  */
 
 -(NSDictionary*)generateSavableOutput;
+
 @end

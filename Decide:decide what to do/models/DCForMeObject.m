@@ -7,10 +7,12 @@
 //
 
 #import "DCForMeObject.h"
+
 @interface DCForMeObject (){
     
+    
 }
-@property (nonatomic,strong) NSArray* activityList;
+@property (nonatomic,strong) NSMutableArray* activityList;
 
 @end
 
@@ -21,7 +23,9 @@
 -(id)initWithActivityList:(NSArray *)list{
     
     if (self = [super init] ) {
-        _activityList = list;
+        
+        _activityList = [list mutableCopy];
+        
     }
     
     return self;
@@ -34,10 +38,30 @@
 
 #pragma mark - Main Methods
 
+-(void)addActivity:(NSString *)activity{
+    
+    [_activityList addObject:activity];
+    
+}
+
+-(void)removeActivity:(NSString *)activity{
+    
+    [_activityList removeObjectIdenticalTo:activity];
+    
+}
+
+-(NSArray*)getListOfActivities{
+    
+    return [NSArray arrayWithArray:_activityList];
+    
+}
+
 -(NSString*)decide{
     
     NSInteger length = _activityList.count;
+    
     NSInteger randomIndex = arc4random() % length;
+    
     NSString* result = _activityList[randomIndex];
     
     return result;
@@ -45,13 +69,18 @@
 }
 
 -(void)setCurrentWorkingSourceWithActivityList:(NSArray *)newSource{
+    
     if (_activityList) {
-        _activityList = newSource;
+        
+        _activityList = [newSource mutableCopy];
+        
     }
 }
 
+
 -(NSDictionary*)generateSavableOutput{
-    NSDictionary* generatedData = @{@"mode":@"forme",@"data":_activityList};
-    return generatedData;
+    
+    //
+    return nil;
 }
 @end
