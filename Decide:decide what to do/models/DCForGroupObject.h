@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "RoleObject.h"
 #import "ShouldSaveOutputToFile.h"
+
 typedef NS_ENUM(NSInteger,RatioCheckedResult) {
     
-    RatioCheckedOneToOne,
+    RatioCheckedEquallyAssigned,
     
     RatioCheckedOverloaded,
     
@@ -53,6 +54,12 @@ typedef NS_ENUM(NSInteger,RatioCheckedResult) {
 
 -(void)removeTask:(RoleObject*)task;
 
+-(void)assignExtraTasks:(NSInteger)numOfTasks ToRoleWithName:(NSString *)rolename;
+
+-(void)assignNumOfTasks:(NSInteger)numOfTasks ToRoleWithName:(NSString *)rolename;
+
+-(void)assignExtraChance:(int)percentage OfDoingTaskNamed:(NSString *)taskname ToRoleWithName:(NSString*)name;
+
 /**
  
  * @brief   Check the ratio of number of tasks to role to identify if who has to do one more task
@@ -66,6 +73,19 @@ typedef NS_ENUM(NSInteger,RatioCheckedResult) {
 
 /**
  
+ * @brief   Getters for the num of tasks one basically has to do
+ 
+ * @param   nil
+ 
+ * @return  long:number of tasks
+ 
+ */
+-(long)getNumOfTasksForEachRole;
+
+-(long)getNumOfExtraTasksSomeoneHasToDo;
+
+/**
+ 
  * @brief   Decide for a group of people by assigning their tasks
  
  * @param   nil
@@ -73,7 +93,7 @@ typedef NS_ENUM(NSInteger,RatioCheckedResult) {
  * @return  NSDictionary with key {role} : value {task}
  
  */
--(NSDictionary<RoleObject*,NSString*>*)decide;
+-(NSArray<RoleObject*>*)decide;
 
 /**
  

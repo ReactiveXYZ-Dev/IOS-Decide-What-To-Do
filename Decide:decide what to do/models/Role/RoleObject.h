@@ -14,8 +14,18 @@
 
 @property (assign,nonatomic) NSInteger numOfTasksToDo;
 
++(instancetype)roleWithName:(NSString* )name;
+
 -(instancetype)initWithName:(NSString*)name;
 
 -(void)assignExtraChance:(NSInteger)percentage OfDoingTaskNamed:(NSString*)taskname;
+
+-(NSInteger)retrieveChanceOfDoingTaskName:(NSString*)taskname;
+
+-(NSArray*)retrieveTasksWithExtraChance;
+
+-(void)assignTask:(NSString*)task;
+
+-(NSArray*)retrieveAssignedTasks;
 
 @end

@@ -46,7 +46,7 @@
 
 -(void)removeActivity:(NSString *)activity{
     
-    [_activityList removeObjectIdenticalTo:activity];
+    [_activityList removeObject:activity];
     
 }
 

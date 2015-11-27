@@ -7,7 +7,8 @@
 //
 
 #import "AppDelegate.h"
-
+#import "RoleObject.h"
+#import "DCForGroupObject.h"
 @interface AppDelegate ()
 
 @end
@@ -17,6 +18,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    // some tests
+    NSArray* listOfRoles = @[[RoleObject roleWithName:@"Jackie"],[RoleObject roleWithName:@"Echo"],[RoleObject roleWithName:@"Effie"]];
+    
+    NSArray* listOfTasks = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8"];
+    
+    DCForGroupObject* groupModel = [[DCForGroupObject alloc]initWithRoleList:listOfRoles AndTasks:listOfTasks];
+    
+    [groupModel assignExtraTasks:groupModel.getNumOfExtraTasksSomeoneHasToDo ToRoleWithName:@"Jackie"];
+    
+    [groupModel assignExtraChance:20 OfDoingTaskNamed:@"2" ToRoleWithName:@"Jackie"];
+    [groupModel assignExtraChance:100 OfDoingTaskNamed:@"2" ToRoleWithName:@"Echo"];
+    
+    NSArray* newDistribution = [groupModel decide];
+    
+    NSLog(@"%@",newDistribution);
+    
+    
     return YES;
 }
 
