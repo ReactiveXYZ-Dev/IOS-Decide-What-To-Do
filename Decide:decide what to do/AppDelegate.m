@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "RoleObject.h"
 #import "DCForGroupObject.h"
+
 @interface AppDelegate ()
 
 @end
@@ -20,20 +21,19 @@
     // Override point for customization after application launch.
     
     // some tests
-    NSArray* listOfRoles = @[[RoleObject roleWithName:@"Jackie"],[RoleObject roleWithName:@"Echo"],[RoleObject roleWithName:@"Effie"]];
+    NSArray* listOfRoles = @[[RoleObject roleWithName:@"Jackie"],[RoleObject roleWithName:@"Echo"]];
     
-    NSArray* listOfTasks = @[@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8"];
+    NSArray* listOfTasks = @[@"Wash dishes",@"cook meal",@"clean the beds"];
     
     DCForGroupObject* groupModel = [[DCForGroupObject alloc]initWithRoleList:listOfRoles AndTasks:listOfTasks];
     
     [groupModel assignExtraTasks:groupModel.getNumOfExtraTasksSomeoneHasToDo ToRoleWithName:@"Jackie"];
     
-    [groupModel assignExtraChance:20 OfDoingTaskNamed:@"2" ToRoleWithName:@"Jackie"];
-    [groupModel assignExtraChance:100 OfDoingTaskNamed:@"2" ToRoleWithName:@"Echo"];
+    [groupModel assignExtraChance:30 OfDoingTaskNamed:@"cook meal" ToRoleWithName:@"Echo"];
+
+    //NSArray* newDistribution = [groupModel decide];
     
-    NSArray* newDistribution = [groupModel decide];
-    
-    NSLog(@"%@",newDistribution);
+    //NSLog(@"%@",newDistribution);
     
     
     return YES;

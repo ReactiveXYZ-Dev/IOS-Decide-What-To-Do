@@ -16,6 +16,9 @@
 		2EC63DEA1BC0A292001521F7 /* Decide_decide_what_to_doTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63DE91BC0A292001521F7 /* Decide_decide_what_to_doTests.m */; };
 		2EC63DF51BC0A292001521F7 /* Decide_decide_what_to_doUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63DF41BC0A292001521F7 /* Decide_decide_what_to_doUITests.m */; };
 		2EC63E081BC0A647001521F7 /* DCForMeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63E071BC0A647001521F7 /* DCForMeObject.m */; };
+		8C5697BE1C09708600FFB05A /* GGTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697B91C09708600FFB05A /* GGTabBar.m */; };
+		8C5697BF1C09708600FFB05A /* GGTabBarAppearanceKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697BB1C09708600FFB05A /* GGTabBarAppearanceKeys.m */; };
+		8C5697C01C09708600FFB05A /* GGTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697BD1C09708600FFB05A /* GGTabBarController.m */; };
 		8CA5CBF51C0567380020E58A /* QuickDecideObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBF41C0567380020E58A /* QuickDecideObject.m */; };
 		8CA5CBFF1C056AC60020E58A /* NSNumber+RoundingUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBFE1C056AC60020E58A /* NSNumber+RoundingUp.m */; };
 		8CA5CC051C068BEF0020E58A /* DCForGroupObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC041C068BEF0020E58A /* DCForGroupObject.m */; };
@@ -59,6 +62,13 @@
 		2EC63E061BC0A647001521F7 /* DCForMeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCForMeObject.h; path = models/DCForMeObject.h; sourceTree = "<group>"; };
 		2EC63E071BC0A647001521F7 /* DCForMeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCForMeObject.m; path = models/DCForMeObject.m; sourceTree = "<group>"; };
 		2EC63E0B1BC0AC75001521F7 /* DCUserDefaultKeyConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUserDefaultKeyConstants.h; sourceTree = "<group>"; };
+		8C5697B71C09708600FFB05A /* GGTabBar-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GGTabBar-Private.h"; sourceTree = "<group>"; };
+		8C5697B81C09708600FFB05A /* GGTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGTabBar.h; sourceTree = "<group>"; };
+		8C5697B91C09708600FFB05A /* GGTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGTabBar.m; sourceTree = "<group>"; };
+		8C5697BA1C09708600FFB05A /* GGTabBarAppearanceKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGTabBarAppearanceKeys.h; sourceTree = "<group>"; };
+		8C5697BB1C09708600FFB05A /* GGTabBarAppearanceKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGTabBarAppearanceKeys.m; sourceTree = "<group>"; };
+		8C5697BC1C09708600FFB05A /* GGTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGTabBarController.h; sourceTree = "<group>"; };
+		8C5697BD1C09708600FFB05A /* GGTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGTabBarController.m; sourceTree = "<group>"; };
 		8CA5CBF31C0567380020E58A /* QuickDecideObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickDecideObject.h; path = models/QuickDecideObject.h; sourceTree = "<group>"; };
 		8CA5CBF41C0567380020E58A /* QuickDecideObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickDecideObject.m; path = models/QuickDecideObject.m; sourceTree = "<group>"; };
 		8CA5CBFD1C056AC60020E58A /* NSNumber+RoundingUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+RoundingUp.h"; path = "vendor/extensions/NSNumber+RoundingUp.h"; sourceTree = "<group>"; };
@@ -162,8 +172,8 @@
 		2EC63E021BC0A2CD001521F7 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				2EC63DD51BC0A292001521F7 /* ViewController.h */,
-				2EC63DD61BC0A292001521F7 /* ViewController.m */,
+				8C5697B41C096EAF00FFB05A /* general controller */,
+				8C5697B31C096E9E00FFB05A /* viewcontrollers */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -190,7 +200,8 @@
 		2EC63E051BC0A2E5001521F7 /* library */ = {
 			isa = PBXGroup;
 			children = (
-				8CA5CC001C05950D0020E58A /* Protocols */,
+				8C5697B51C09705100FFB05A /* vendors */,
+				8CA5CC001C05950D0020E58A /* protocols */,
 				8CA5CBF61C0569BF0020E58A /* extensions */,
 			);
 			name = library;
@@ -223,6 +234,44 @@
 			name = "Decide For Group";
 			sourceTree = "<group>";
 		};
+		8C5697B31C096E9E00FFB05A /* viewcontrollers */ = {
+			isa = PBXGroup;
+			children = (
+				2EC63DD51BC0A292001521F7 /* ViewController.h */,
+				2EC63DD61BC0A292001521F7 /* ViewController.m */,
+			);
+			name = viewcontrollers;
+			sourceTree = "<group>";
+		};
+		8C5697B41C096EAF00FFB05A /* general controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "general controller";
+			sourceTree = "<group>";
+		};
+		8C5697B51C09705100FFB05A /* vendors */ = {
+			isa = PBXGroup;
+			children = (
+				8C5697B61C09707D00FFB05A /* GGTabBar */,
+			);
+			name = vendors;
+			sourceTree = "<group>";
+		};
+		8C5697B61C09707D00FFB05A /* GGTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8C5697B71C09708600FFB05A /* GGTabBar-Private.h */,
+				8C5697B81C09708600FFB05A /* GGTabBar.h */,
+				8C5697B91C09708600FFB05A /* GGTabBar.m */,
+				8C5697BA1C09708600FFB05A /* GGTabBarAppearanceKeys.h */,
+				8C5697BB1C09708600FFB05A /* GGTabBarAppearanceKeys.m */,
+				8C5697BC1C09708600FFB05A /* GGTabBarController.h */,
+				8C5697BD1C09708600FFB05A /* GGTabBarController.m */,
+			);
+			name = GGTabBar;
+			sourceTree = "<group>";
+		};
 		8CA5CBF21C05671E0020E58A /* Quick Decide */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,13 +290,13 @@
 			name = extensions;
 			sourceTree = "<group>";
 		};
-		8CA5CC001C05950D0020E58A /* Protocols */ = {
+		8CA5CC001C05950D0020E58A /* protocols */ = {
 			isa = PBXGroup;
 			children = (
 				8CA5CC011C0595610020E58A /* ShouldGenerateResultCount.h */,
 				8CA5CC021C05969C0020E58A /* ShouldSaveOutputToFile.h */,
 			);
-			name = Protocols;
+			name = protocols;
 			sourceTree = "<group>";
 		};
 		8CA5CC061C06940B0020E58A /* Roles */ = {
@@ -391,12 +440,15 @@
 			files = (
 				8CA5CC091C0694270020E58A /* RoleObject.m in Sources */,
 				2EC63DD71BC0A292001521F7 /* ViewController.m in Sources */,
+				8C5697C01C09708600FFB05A /* GGTabBarController.m in Sources */,
 				8CA5CBF51C0567380020E58A /* QuickDecideObject.m in Sources */,
 				8CA5CC051C068BEF0020E58A /* DCForGroupObject.m in Sources */,
 				2EC63E081BC0A647001521F7 /* DCForMeObject.m in Sources */,
 				2EC63DD41BC0A292001521F7 /* AppDelegate.m in Sources */,
 				8CA5CBFF1C056AC60020E58A /* NSNumber+RoundingUp.m in Sources */,
 				2EC63DD11BC0A292001521F7 /* main.m in Sources */,
+				8C5697BE1C09708600FFB05A /* GGTabBar.m in Sources */,
+				8C5697BF1C09708600FFB05A /* GGTabBarAppearanceKeys.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

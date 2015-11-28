@@ -60,6 +60,7 @@ typedef NS_ENUM(NSInteger,RatioCheckedResult) {
 
 -(void)assignExtraChance:(int)percentage OfDoingTaskNamed:(NSString *)taskname ToRoleWithName:(NSString*)name;
 
+-(void)swapRoleIndexWithName:(NSString*)toBeSwapped With:(NSString*)substitute;
 /**
  
  * @brief   Check the ratio of number of tasks to role to identify if who has to do one more task
@@ -86,14 +87,25 @@ typedef NS_ENUM(NSInteger,RatioCheckedResult) {
 
 /**
  
- * @brief   Decide for a group of people by assigning their tasks
+ * @brief   Decide for a group of people by assigning their tasks in a set priority, that is the first one in the role objects array get to choose first
  
  * @param   nil
  
  * @return  NSDictionary with key {role} : value {task}
  
  */
--(NSArray<RoleObject*>*)decide;
+-(NSArray<RoleObject*> *)decideWithSetPriority;
+
+/**
+ 
+ * @brief   Decide for a group by assigning their tasks in a random priority, that is a random role is selected after each loop in an unordered manner
+ 
+ * @param
+ 
+ * @return
+ 
+ */
+-(NSArray<RoleObject*> *)decideWithRandomPriority;
 
 /**
  
