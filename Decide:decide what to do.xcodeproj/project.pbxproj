@@ -9,13 +9,20 @@
 /* Begin PBXBuildFile section */
 		2EC63DD11BC0A292001521F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63DD01BC0A292001521F7 /* main.m */; };
 		2EC63DD41BC0A292001521F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63DD31BC0A292001521F7 /* AppDelegate.m */; };
-		2EC63DD71BC0A292001521F7 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63DD61BC0A292001521F7 /* ViewController.m */; };
+		2EC63DD71BC0A292001521F7 /* QuickDecideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63DD61BC0A292001521F7 /* QuickDecideViewController.m */; };
 		2EC63DDA1BC0A292001521F7 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EC63DD81BC0A292001521F7 /* MainStoryBoard.storyboard */; };
 		2EC63DDC1BC0A292001521F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EC63DDB1BC0A292001521F7 /* Assets.xcassets */; };
 		2EC63DDF1BC0A292001521F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EC63DDD1BC0A292001521F7 /* LaunchScreen.storyboard */; };
 		2EC63DEA1BC0A292001521F7 /* Decide_decide_what_to_doTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63DE91BC0A292001521F7 /* Decide_decide_what_to_doTests.m */; };
 		2EC63DF51BC0A292001521F7 /* Decide_decide_what_to_doUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63DF41BC0A292001521F7 /* Decide_decide_what_to_doUITests.m */; };
 		2EC63E081BC0A647001521F7 /* DCForMeObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63E071BC0A647001521F7 /* DCForMeObject.m */; };
+		8C12589E1C100912007FAC62 /* KLCPopup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C12589C1C100912007FAC62 /* KLCPopup.m */; };
+		8C1258A41C101183007FAC62 /* QDResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1258A31C101183007FAC62 /* QDResultView.m */; };
+		8C1258AD1C10156F007FAC62 /* PieLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1258A81C10156F007FAC62 /* PieLayer.m */; };
+		8C1258AE1C10156F007FAC62 /* NSMutableArray+pieEx.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1258AA1C10156F007FAC62 /* NSMutableArray+pieEx.m */; };
+		8C1258AF1C10156F007FAC62 /* PieElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1258AC1C10156F007FAC62 /* PieElement.m */; };
+		8C1258B21C101908007FAC62 /* UIView+QuickSizeFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1258B11C101908007FAC62 /* UIView+QuickSizeFetcher.m */; };
+		8C1258BC1C10221E007FAC62 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1258BB1C10221E007FAC62 /* Helper.m */; };
 		8C5697BE1C09708600FFB05A /* GGTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697B91C09708600FFB05A /* GGTabBar.m */; };
 		8C5697BF1C09708600FFB05A /* GGTabBarAppearanceKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697BB1C09708600FFB05A /* GGTabBarAppearanceKeys.m */; };
 		8C5697C01C09708600FFB05A /* GGTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697BD1C09708600FFB05A /* GGTabBarController.m */; };
@@ -47,8 +54,8 @@
 		2EC63DD01BC0A292001521F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		2EC63DD21BC0A292001521F7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2EC63DD31BC0A292001521F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2EC63DD51BC0A292001521F7 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2EC63DD61BC0A292001521F7 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		2EC63DD51BC0A292001521F7 /* QuickDecideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickDecideViewController.h; sourceTree = "<group>"; };
+		2EC63DD61BC0A292001521F7 /* QuickDecideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickDecideViewController.m; sourceTree = "<group>"; };
 		2EC63DD91BC0A292001521F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryBoard.storyboard; sourceTree = "<group>"; };
 		2EC63DDB1BC0A292001521F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EC63DDE1BC0A292001521F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -62,6 +69,21 @@
 		2EC63E061BC0A647001521F7 /* DCForMeObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCForMeObject.h; path = models/DCForMeObject.h; sourceTree = "<group>"; };
 		2EC63E071BC0A647001521F7 /* DCForMeObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCForMeObject.m; path = models/DCForMeObject.m; sourceTree = "<group>"; };
 		2EC63E0B1BC0AC75001521F7 /* DCUserDefaultKeyConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCUserDefaultKeyConstants.h; sourceTree = "<group>"; };
+		8C12589B1C100912007FAC62 /* KLCPopup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KLCPopup.h; sourceTree = "<group>"; };
+		8C12589C1C100912007FAC62 /* KLCPopup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KLCPopup.m; sourceTree = "<group>"; };
+		8C1258A21C101183007FAC62 /* QDResultView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QDResultView.h; path = Self/QDResultView/QDResultView.h; sourceTree = "<group>"; };
+		8C1258A31C101183007FAC62 /* QDResultView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QDResultView.m; path = Self/QDResultView/QDResultView.m; sourceTree = "<group>"; };
+		8C1258A61C10156F007FAC62 /* MagicPieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagicPieLayer.h; sourceTree = "<group>"; };
+		8C1258A71C10156F007FAC62 /* PieLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieLayer.h; sourceTree = "<group>"; };
+		8C1258A81C10156F007FAC62 /* PieLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieLayer.m; sourceTree = "<group>"; };
+		8C1258A91C10156F007FAC62 /* NSMutableArray+pieEx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+pieEx.h"; sourceTree = "<group>"; };
+		8C1258AA1C10156F007FAC62 /* NSMutableArray+pieEx.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+pieEx.m"; sourceTree = "<group>"; };
+		8C1258AB1C10156F007FAC62 /* PieElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieElement.h; sourceTree = "<group>"; };
+		8C1258AC1C10156F007FAC62 /* PieElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieElement.m; sourceTree = "<group>"; };
+		8C1258B01C101908007FAC62 /* UIView+QuickSizeFetcher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+QuickSizeFetcher.h"; path = "vendor/extensions/UIView+QuickSizeFetcher.h"; sourceTree = "<group>"; };
+		8C1258B11C101908007FAC62 /* UIView+QuickSizeFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+QuickSizeFetcher.m"; path = "vendor/extensions/UIView+QuickSizeFetcher.m"; sourceTree = "<group>"; };
+		8C1258BA1C10221E007FAC62 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helper.h; path = Self/Helper/Helper.h; sourceTree = "<group>"; };
+		8C1258BB1C10221E007FAC62 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Helper.m; path = Self/Helper/Helper.m; sourceTree = "<group>"; };
 		8C5697B71C09708600FFB05A /* GGTabBar-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GGTabBar-Private.h"; sourceTree = "<group>"; };
 		8C5697B81C09708600FFB05A /* GGTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGTabBar.h; sourceTree = "<group>"; };
 		8C5697B91C09708600FFB05A /* GGTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGTabBar.m; sourceTree = "<group>"; };
@@ -173,7 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				8C5697B41C096EAF00FFB05A /* general controller */,
-				8C5697B31C096E9E00FFB05A /* viewcontrollers */,
+				8C5697B31C096E9E00FFB05A /* view controllers */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -200,6 +222,7 @@
 		2EC63E051BC0A2E5001521F7 /* library */ = {
 			isa = PBXGroup;
 			children = (
+				8C1258A01C101122007FAC62 /* self */,
 				8C5697B51C09705100FFB05A /* vendors */,
 				8CA5CC001C05950D0020E58A /* protocols */,
 				8CA5CBF61C0569BF0020E58A /* extensions */,
@@ -234,13 +257,63 @@
 			name = "Decide For Group";
 			sourceTree = "<group>";
 		};
-		8C5697B31C096E9E00FFB05A /* viewcontrollers */ = {
+		8C12589A1C100890007FAC62 /* KLCPopup */ = {
 			isa = PBXGroup;
 			children = (
-				2EC63DD51BC0A292001521F7 /* ViewController.h */,
-				2EC63DD61BC0A292001521F7 /* ViewController.m */,
+				8C12589B1C100912007FAC62 /* KLCPopup.h */,
+				8C12589C1C100912007FAC62 /* KLCPopup.m */,
 			);
-			name = viewcontrollers;
+			name = KLCPopup;
+			sourceTree = "<group>";
+		};
+		8C1258A01C101122007FAC62 /* self */ = {
+			isa = PBXGroup;
+			children = (
+				8C1258B61C1021E3007FAC62 /* Helper */,
+				8C1258A11C101129007FAC62 /* QuickDecideResultCountView */,
+			);
+			name = self;
+			sourceTree = "<group>";
+		};
+		8C1258A11C101129007FAC62 /* QuickDecideResultCountView */ = {
+			isa = PBXGroup;
+			children = (
+				8C1258A21C101183007FAC62 /* QDResultView.h */,
+				8C1258A31C101183007FAC62 /* QDResultView.m */,
+			);
+			name = QuickDecideResultCountView;
+			sourceTree = "<group>";
+		};
+		8C1258A51C101560007FAC62 /* MagicPie */ = {
+			isa = PBXGroup;
+			children = (
+				8C1258A61C10156F007FAC62 /* MagicPieLayer.h */,
+				8C1258A71C10156F007FAC62 /* PieLayer.h */,
+				8C1258A81C10156F007FAC62 /* PieLayer.m */,
+				8C1258A91C10156F007FAC62 /* NSMutableArray+pieEx.h */,
+				8C1258AA1C10156F007FAC62 /* NSMutableArray+pieEx.m */,
+				8C1258AB1C10156F007FAC62 /* PieElement.h */,
+				8C1258AC1C10156F007FAC62 /* PieElement.m */,
+			);
+			name = MagicPie;
+			sourceTree = "<group>";
+		};
+		8C1258B61C1021E3007FAC62 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				8C1258BA1C10221E007FAC62 /* Helper.h */,
+				8C1258BB1C10221E007FAC62 /* Helper.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		8C5697B31C096E9E00FFB05A /* view controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2EC63DD51BC0A292001521F7 /* QuickDecideViewController.h */,
+				2EC63DD61BC0A292001521F7 /* QuickDecideViewController.m */,
+			);
+			name = "view controllers";
 			sourceTree = "<group>";
 		};
 		8C5697B41C096EAF00FFB05A /* general controller */ = {
@@ -253,6 +326,8 @@
 		8C5697B51C09705100FFB05A /* vendors */ = {
 			isa = PBXGroup;
 			children = (
+				8C1258A51C101560007FAC62 /* MagicPie */,
+				8C12589A1C100890007FAC62 /* KLCPopup */,
 				8C5697B61C09707D00FFB05A /* GGTabBar */,
 			);
 			name = vendors;
@@ -286,6 +361,8 @@
 			children = (
 				8CA5CBFD1C056AC60020E58A /* NSNumber+RoundingUp.h */,
 				8CA5CBFE1C056AC60020E58A /* NSNumber+RoundingUp.m */,
+				8C1258B01C101908007FAC62 /* UIView+QuickSizeFetcher.h */,
+				8C1258B11C101908007FAC62 /* UIView+QuickSizeFetcher.m */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -438,17 +515,24 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C1258AE1C10156F007FAC62 /* NSMutableArray+pieEx.m in Sources */,
 				8CA5CC091C0694270020E58A /* RoleObject.m in Sources */,
-				2EC63DD71BC0A292001521F7 /* ViewController.m in Sources */,
+				2EC63DD71BC0A292001521F7 /* QuickDecideViewController.m in Sources */,
+				8C1258AD1C10156F007FAC62 /* PieLayer.m in Sources */,
 				8C5697C01C09708600FFB05A /* GGTabBarController.m in Sources */,
+				8C12589E1C100912007FAC62 /* KLCPopup.m in Sources */,
 				8CA5CBF51C0567380020E58A /* QuickDecideObject.m in Sources */,
+				8C1258BC1C10221E007FAC62 /* Helper.m in Sources */,
 				8CA5CC051C068BEF0020E58A /* DCForGroupObject.m in Sources */,
 				2EC63E081BC0A647001521F7 /* DCForMeObject.m in Sources */,
 				2EC63DD41BC0A292001521F7 /* AppDelegate.m in Sources */,
 				8CA5CBFF1C056AC60020E58A /* NSNumber+RoundingUp.m in Sources */,
+				8C1258B21C101908007FAC62 /* UIView+QuickSizeFetcher.m in Sources */,
 				2EC63DD11BC0A292001521F7 /* main.m in Sources */,
 				8C5697BE1C09708600FFB05A /* GGTabBar.m in Sources */,
 				8C5697BF1C09708600FFB05A /* GGTabBarAppearanceKeys.m in Sources */,
+				8C1258A41C101183007FAC62 /* QDResultView.m in Sources */,
+				8C1258AF1C10156F007FAC62 /* PieElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

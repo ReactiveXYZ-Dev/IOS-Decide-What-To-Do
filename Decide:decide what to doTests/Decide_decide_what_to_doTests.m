@@ -8,6 +8,9 @@
 
 #import <XCTest/XCTest.h>
 
+#import "RoleObject.h"
+#import "DCForGroupObject.h"
+
 @interface Decide_decide_what_to_doTests : XCTestCase
 
 @end
@@ -27,6 +30,19 @@
 - (void)testExample {
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    NSArray* listOfRoles = @[[RoleObject roleWithName:@"Jackie"],[RoleObject roleWithName:@"Echo"]];
+    
+    NSArray* listOfTasks = @[@"Wash dishes",@"cook meal",@"clean the beds"];
+    
+    DCForGroupObject* groupModel = [[DCForGroupObject alloc]initWithRoleList:listOfRoles AndTasks:listOfTasks];
+    
+    [groupModel assignExtraTasks:groupModel.getNumOfExtraTasksSomeoneHasToDo ToRoleWithName:@"Jackie"];
+    
+    [groupModel assignExtraChance:30 OfDoingTaskNamed:@"cook meal" ToRoleWithName:@"Echo"];
+    
+    NSArray* newDistribution = [groupModel decideWithSetPriority];
+    
+    NSLog(@"%@",newDistribution);
 }
 
 - (void)testPerformanceExample {
