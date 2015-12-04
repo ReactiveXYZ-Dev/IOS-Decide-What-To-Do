@@ -55,21 +55,27 @@
         
         [_yesTitleLabel setTextAlignment:NSTextAlignmentCenter];
         
-        _yesTitleLabel.text = @"YES?";
+        _yesTitleLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:12];
+        
+        _yesTitleLabel.text = @"Got it!";
         
         [self addSubview:_yesTitleLabel];
         
-        _noTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake([self getFrameWidth] / 2, 15, [self getFrameWidth] / 2, 25)];
+        _noTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake([self getFrameWidth] / 2, 0, [self getFrameWidth] / 2, 25)];
         
         [_noTitleLabel setTextAlignment:NSTextAlignmentCenter];
         
-        _noTitleLabel.text = @"NO?";
+        _noTitleLabel.font = [UIFont fontWithName:@"Avenir-Medium" size:12];
+        
+        _noTitleLabel.text = @"Not really";
         
         [self addSubview:_noTitleLabel];
         
         _yesCountLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, [_yesTitleLabel getFrameOriginY] + [_yesTitleLabel getFrameHeight], [self getFrameWidth] / 2, 30)];
         
         [_yesCountLabel setTextAlignment:NSTextAlignmentCenter];
+        
+        _yesCountLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:16];
         
         _yesCountLabel.text = [Helper stringWithInteger:yesCount];
         
@@ -79,12 +85,14 @@
         
         [_noCountLabel setTextAlignment:NSTextAlignmentCenter];
         
+        _noCountLabel.font = [UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:16];
+        
         _noCountLabel.text = [Helper stringWithInteger:noCount];
         
         [self addSubview:_noCountLabel];
         
         // initialize the pie and its container
-        _pieContainer = [[UIView alloc]initWithFrame:CGRectMake(0, [_noCountLabel getFrameOriginY] + [_noCountLabel getFrameHeight], [self getFrameWidth] , [self getFrameWidth])];
+        _pieContainer = [[UIView alloc]initWithFrame:CGRectMake(0, [_noCountLabel getFrameOriginY] , [self getFrameWidth] , [self getFrameWidth])];
         
         _pieContainer.bounds = CGRectInset(_pieContainer.frame, 25, 25);
         
@@ -97,6 +105,7 @@
         [_pieContainer.layer addSublayer:_pieChart];
         
         [self addSubview:_pieContainer];
+
         
     }
     
@@ -108,27 +117,88 @@
 
 -(void)incrementYesCount {
     
+    yesCount ++ ;
     
+    [self updateLabel];
+    
+    [self updatePie];
     
 }
 
 -(void)incrementNoCount {
     
+    noCount ++ ;
     
+    [self updateLabel];
+    
+    [self updatePie];
     
 }
 
 #pragma mark - private methods
+-(void)updateLabel{
+    // define animation/transition
+    CATransition* transition = [[CATransition alloc]init];
+    
+    transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+    
+    transition.type = kCATransitionFade;
+    
+    transition.duration = 0.35f;
+    
+    // update label with some animations
+    [_yesCountLabel.layer addAnimation:transition forKey:kCATransitionFade];
+    
+    _yesCountLabel.text = [Helper stringWithInteger:yesCount];
+    
+    [_noCountLabel.layer addAnimation:transition forKey:kCATransitionFade];
+    
+    _noCountLabel.text = [Helper stringWithInteger:noCount];
+    
+}
+
+
 -(void)updatePie{
     
     // no values
     if (_pieChart.values.count == 0) {
         
         // add YES part
-        [_pieChart addValues:@[[PieElement pieElementWithValue:yesCount color:[UIColor redColor]]] animated:YES];
+        [_pieChart addValues:@[
+                               [PieElement pieElementWithValue:yesCount color:[UIColor colorWithRed:0.40 green:0.73 blue:0.42 alpha:1.0]],
+                               [PieElement pieElementWithValue:noCount color:[UIColor colorWithRed:0.94 green:0.33 blue:0.31 alpha:1.0]]
+                               ]
+        animated:YES];
         
+    }// has values
+    else{
+        
+        // animate YES
+        PieElement* yesElement = _pieChart.values[0];
+        
+        [PieElement animateChanges:^(void){
+            
+            yesElement.val = yesCount;
+            
+        }];
+        
+        // animate NO
+        PieElement* noElement = _pieChart.values[1];
+        
+        [PieElement animateChanges:^(void){
+           
+            noElement.val = noCount;
+            
+        }];
         
     }
+    
+}
+
+#pragma mark - overridden methods
+-(void)dealloc{
+    
+    
     
 }
 

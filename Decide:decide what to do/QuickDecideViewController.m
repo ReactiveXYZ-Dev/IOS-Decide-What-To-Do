@@ -10,9 +10,16 @@
 
 #import "QuickDecideObject.h"
 
-@interface QuickDecideViewController ()
+#import "QDResultView.h"
 
-@property (strong,nonatomic) UIScrollView* container;
+#import "UIView+QuickSizeFetcher.h"
+@interface QuickDecideViewController (){
+
+    QDResultView* testView;
+    
+}
+
+//@property (strong,nonatomic) UIScrollView* container;
 
 @end
 
@@ -23,12 +30,30 @@
     
     // initialize container
     
+    // test view
+    testView = [[QDResultView alloc]initWithFrame:CGRectMake(0, 64, [self.view getFrameWidth], [self.view getFrameHeight])];
     
+    [self.view addSubview:testView];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+#pragma mark - Tests
+
+- (IBAction)increseYes:(id)sender {
+    
+    [testView incrementYesCount];
+    
+}
+
+
+- (IBAction)increaseNo:(id)sender {
+    
+    [testView incrementNoCount];
 }
 
 @end
