@@ -13,13 +13,16 @@
 #import "QDResultView.h"
 
 #import "UIView+QuickSizeFetcher.h"
+
+#import "Helper.h"
+
 @interface QuickDecideViewController (){
 
-    QDResultView* testView;
+    QuickDecideObject* qdModel;
     
 }
 
-//@property (strong,nonatomic) UIScrollView* container;
+@property (strong,nonatomic) UIScrollView* container;
 
 @end
 
@@ -29,11 +32,13 @@
     [super viewDidLoad];
     
     // initialize container
+    _container = [[UIScrollView alloc]initWithFrame:self.view.bounds];
     
-    // test view
-    testView = [[QDResultView alloc]initWithFrame:CGRectMake(0, 64, [self.view getFrameWidth], [self.view getFrameHeight])];
+    [self.view addSubview:_container];
     
-    [self.view addSubview:testView];
+    // add button
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,17 +48,5 @@
 
 
 #pragma mark - Tests
-
-- (IBAction)increseYes:(id)sender {
-    
-    [testView incrementYesCount];
-    
-}
-
-
-- (IBAction)increaseNo:(id)sender {
-    
-    [testView incrementNoCount];
-}
 
 @end

@@ -14,6 +14,18 @@
 +(NSString*)stringWithInteger:(NSInteger)integer{
     
     return [NSString stringWithFormat:@"%i",integer];
+ 
+}
+
++(NSString*)stringDescribingCGRect:(CGRect)rect{
+    
+    return NSStringFromCGRect(rect);
+    
+}
+
++(void)nslog:(NSString *)string{
+    
+    NSLog(@"%@",string);
     
 }
 

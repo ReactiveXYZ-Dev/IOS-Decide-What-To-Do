@@ -8,8 +8,14 @@
 
 #import <Foundation/Foundation.h>
 
+#import <UIKit/UIKit.h>
+
 @interface Helper : NSObject
 
 +(NSString*)stringWithInteger:(NSInteger)integer;
+
++(NSString*)stringDescribingCGRect:(CGRect)rect;
+
++(void)nslog:(NSString*)string;
 
 @end

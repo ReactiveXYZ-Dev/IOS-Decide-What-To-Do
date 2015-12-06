@@ -13,6 +13,7 @@
 #import "UIView+QuickSizeFetcher.h"
 
 #import "Helper.h"
+
 @interface QDResultView(){
     
     NSInteger yesCount;
@@ -50,8 +51,8 @@
         
         noCount = 0;
         
-        // set up texts
-        _yesTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 0, [self getFrameWidth] / 2, 25)];
+        // set up texts and their container
+        _yesTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, 0, [self getFrameWidth] / 2 - 15, 25)];
         
         [_yesTitleLabel setTextAlignment:NSTextAlignmentCenter];
         
@@ -61,7 +62,7 @@
         
         [self addSubview:_yesTitleLabel];
         
-        _noTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake([self getFrameWidth] / 2, 0, [self getFrameWidth] / 2, 25)];
+        _noTitleLabel = [[UILabel alloc]initWithFrame:CGRectMake([self getFrameWidth] / 2, 0, [self getFrameWidth] / 2 - 15, 25)];
         
         [_noTitleLabel setTextAlignment:NSTextAlignmentCenter];
         
@@ -71,7 +72,7 @@
         
         [self addSubview:_noTitleLabel];
         
-        _yesCountLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, [_yesTitleLabel getFrameOriginY] + [_yesTitleLabel getFrameHeight], [self getFrameWidth] / 2, 30)];
+        _yesCountLabel = [[UILabel alloc]initWithFrame:CGRectMake(15, [_yesTitleLabel getFrameOriginY] + [_yesTitleLabel getFrameHeight], [self getFrameWidth] / 2 - 15, 30)];
         
         [_yesCountLabel setTextAlignment:NSTextAlignmentCenter];
         
@@ -81,7 +82,7 @@
         
         [self addSubview:_yesCountLabel];
         
-        _noCountLabel = [[UILabel alloc]initWithFrame:CGRectMake([self getFrameWidth] / 2, [_noTitleLabel getFrameOriginY]+[_noTitleLabel getFrameHeight], [self getFrameWidth] / 2, 30)];
+        _noCountLabel = [[UILabel alloc]initWithFrame:CGRectMake([self getFrameWidth] / 2, [_noTitleLabel getFrameOriginY]+[_noTitleLabel getFrameHeight], [self getFrameWidth] / 2 - 15, 30)];
         
         [_noCountLabel setTextAlignment:NSTextAlignmentCenter];
         
@@ -119,7 +120,7 @@
     
     yesCount ++ ;
     
-    [self updateLabel];
+    [self updateLabel:@"yes"];
     
     [self updatePie];
     
@@ -129,31 +130,39 @@
     
     noCount ++ ;
     
-    [self updateLabel];
+    [self updateLabel:@"no"];
     
     [self updatePie];
     
 }
 
 #pragma mark - private methods
--(void)updateLabel{
+-(void)updateLabel:(NSString*)type{
+    
     // define animation/transition
     CATransition* transition = [[CATransition alloc]init];
     
     transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
     
-    transition.type = kCATransitionFade;
+    transition.type = kCATransitionPush;
     
     transition.duration = 0.35f;
     
-    // update label with some animations
-    [_yesCountLabel.layer addAnimation:transition forKey:kCATransitionFade];
+    if ([type  isEqual: @"yes"]) {
+        
+        [_yesCountLabel.layer addAnimation:transition forKey:kCATransitionPush];
+        
+        _yesCountLabel.text = [Helper stringWithInteger:yesCount];
+        
+    }
     
-    _yesCountLabel.text = [Helper stringWithInteger:yesCount];
-    
-    [_noCountLabel.layer addAnimation:transition forKey:kCATransitionFade];
-    
-    _noCountLabel.text = [Helper stringWithInteger:noCount];
+    if ([type isEqual: @"no"]) {
+        
+        [_noCountLabel.layer addAnimation:transition forKey:kCATransitionPush];
+        
+        _noCountLabel.text = [Helper stringWithInteger:noCount];
+        
+    }
     
 }
 

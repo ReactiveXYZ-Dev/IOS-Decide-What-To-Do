@@ -19,18 +19,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Quick Decide" id="CuM-0f-yZj">
-                        <barButtonItem key="leftBarButtonItem" title="Yes" id="IKf-Mu-LbL">
-                            <connections>
-                                <action selector="increseYes:" destination="p49-IM-qmz" id="dUf-M1-ZTe"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="No" id="1ac-KU-yYY">
-                            <connections>
-                                <action selector="increaseNo:" destination="p49-IM-qmz" id="aNw-FK-1lw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Quick Decide" id="CuM-0f-yZj"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aIf-Vm-l14" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -23,6 +23,7 @@
 		8C1258AF1C10156F007FAC62 /* PieElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1258AC1C10156F007FAC62 /* PieElement.m */; };
 		8C1258B21C101908007FAC62 /* UIView+QuickSizeFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1258B11C101908007FAC62 /* UIView+QuickSizeFetcher.m */; };
 		8C1258BC1C10221E007FAC62 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1258BB1C10221E007FAC62 /* Helper.m */; };
+		8C1258C11C11C592007FAC62 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1258C01C11C592007FAC62 /* QuartzCore.framework */; };
 		8C5697BE1C09708600FFB05A /* GGTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697B91C09708600FFB05A /* GGTabBar.m */; };
 		8C5697BF1C09708600FFB05A /* GGTabBarAppearanceKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697BB1C09708600FFB05A /* GGTabBarAppearanceKeys.m */; };
 		8C5697C01C09708600FFB05A /* GGTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697BD1C09708600FFB05A /* GGTabBarController.m */; };
@@ -84,6 +85,7 @@
 		8C1258B11C101908007FAC62 /* UIView+QuickSizeFetcher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+QuickSizeFetcher.m"; path = "vendor/extensions/UIView+QuickSizeFetcher.m"; sourceTree = "<group>"; };
 		8C1258BA1C10221E007FAC62 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helper.h; path = Self/Helper/Helper.h; sourceTree = "<group>"; };
 		8C1258BB1C10221E007FAC62 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Helper.m; path = Self/Helper/Helper.m; sourceTree = "<group>"; };
+		8C1258C01C11C592007FAC62 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		8C5697B71C09708600FFB05A /* GGTabBar-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GGTabBar-Private.h"; sourceTree = "<group>"; };
 		8C5697B81C09708600FFB05A /* GGTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGTabBar.h; sourceTree = "<group>"; };
 		8C5697B91C09708600FFB05A /* GGTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGTabBar.m; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C1258C11C11C592007FAC62 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -168,6 +171,7 @@
 		2EC63DCF1BC0A292001521F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C1258C01C11C592007FAC62 /* QuartzCore.framework */,
 				2EC63DD01BC0A292001521F7 /* main.m */,
 			);
 			name = "Supporting Files";
