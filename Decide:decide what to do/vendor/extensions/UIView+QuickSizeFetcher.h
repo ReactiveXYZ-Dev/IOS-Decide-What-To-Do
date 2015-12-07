@@ -20,4 +20,8 @@
 
 -(CGFloat)getFrameOriginY;
 
+-(CGFloat)getBoundHeight;
+
+-(CGFloat)getBoundWidth;
+
 @end

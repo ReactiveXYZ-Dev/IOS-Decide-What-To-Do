@@ -23,6 +23,7 @@
     
 }
 
+
 +(void)nslog:(NSString *)string{
     
     NSLog(@"%@",string);

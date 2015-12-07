@@ -34,4 +34,16 @@
     
 }
 
+-(CGFloat)getBoundHeight{
+    
+    return self.bounds.size.height;
+    
+}
+
+-(CGFloat)getBoundWidth{
+    
+    return self.bounds.size.width;
+    
+}
+
 @end
