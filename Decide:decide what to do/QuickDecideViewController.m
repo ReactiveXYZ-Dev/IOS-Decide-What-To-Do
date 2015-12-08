@@ -39,11 +39,8 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     
-    // set tabbar item image
     
-    UITabBarItem* thisItem = self.tabBarController.tabBar.items[0];
     
-    [thisItem setImage:[Helper resizeImageWithSourceName:@"quick_decide" AndScale:2]];
 }
 
 - (void)viewDidLoad {
@@ -62,7 +59,7 @@
     // add button
     _decideBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     
-    float designatedSideLength = [self.view getFrameWidth] / 2.5;
+    float designatedSideLength = [self.view getFrameWidth] / 2;
     
     _decideBtn.frame = CGRectMake([self.view getFrameWidth] / 2 - designatedSideLength / 2, [self.view getFrameHeight] / 5, designatedSideLength, designatedSideLength);
     
@@ -98,13 +95,19 @@
     
     NSString* resultString = [[NSString alloc]init];
     
+    NSString* promptString = [[NSString alloc]init];
+    
     if (result) {
         
         resultString = @"YES";
         
+        promptString = @"Great!!";
+        
     }else{
         
         resultString = @"NO";
+        
+        promptString = @"Alright..";
         
     }
     
@@ -128,7 +131,7 @@
     [dismissButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     [dismissButton setTitleColor:[[dismissButton titleColorForState:UIControlStateNormal] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
     dismissButton.titleLabel.font = [UIFont boldSystemFontOfSize:16.0];
-    [dismissButton setTitle:@"Alright" forState:UIControlStateNormal];
+    [dismissButton setTitle:promptString forState:UIControlStateNormal];
     dismissButton.layer.cornerRadius = 6.0;
     [dismissButton addTarget:self action:@selector(dismissButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     

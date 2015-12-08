@@ -30,6 +30,7 @@
 		8C45AB8A1C166067001A6323 /* quick_decide.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C45AB891C166067001A6323 /* quick_decide.png */; };
 		8C45AB8D1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C45AB8C1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m */; };
 		8C45AB8F1C16A534001A6323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C45AB8E1C16A534001A6323 /* Main.storyboard */; };
+		8C45AB921C16A9DD001A6323 /* RootTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C45AB911C16A9DD001A6323 /* RootTabBarViewController.m */; };
 		8C5697BE1C09708600FFB05A /* GGTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697B91C09708600FFB05A /* GGTabBar.m */; };
 		8C5697BF1C09708600FFB05A /* GGTabBarAppearanceKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697BB1C09708600FFB05A /* GGTabBarAppearanceKeys.m */; };
 		8C5697C01C09708600FFB05A /* GGTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697BD1C09708600FFB05A /* GGTabBarController.m */; };
@@ -101,6 +102,8 @@
 		8C45AB8B1C1661AE001A6323 /* UIScrollView+UpdateContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+UpdateContentSize.h"; path = "vendor/extensions/UIScrollView+UpdateContentSize.h"; sourceTree = "<group>"; };
 		8C45AB8C1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+UpdateContentSize.m"; path = "vendor/extensions/UIScrollView+UpdateContentSize.m"; sourceTree = "<group>"; };
 		8C45AB8E1C16A534001A6323 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		8C45AB901C16A9DD001A6323 /* RootTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarViewController.h; sourceTree = "<group>"; };
+		8C45AB911C16A9DD001A6323 /* RootTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabBarViewController.m; sourceTree = "<group>"; };
 		8C5697B71C09708600FFB05A /* GGTabBar-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GGTabBar-Private.h"; sourceTree = "<group>"; };
 		8C5697B81C09708600FFB05A /* GGTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGTabBar.h; sourceTree = "<group>"; };
 		8C5697B91C09708600FFB05A /* GGTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGTabBar.m; sourceTree = "<group>"; };
@@ -354,6 +357,8 @@
 				8C45AB7A1C165E8C001A6323 /* DecideForMeViewController.m */,
 				8C45AB7C1C165EA3001A6323 /* DecideForGroupViewController.h */,
 				8C45AB7D1C165EA3001A6323 /* DecideForGroupViewController.m */,
+				8C45AB901C16A9DD001A6323 /* RootTabBarViewController.h */,
+				8C45AB911C16A9DD001A6323 /* RootTabBarViewController.m */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -582,6 +587,7 @@
 				8C5697BE1C09708600FFB05A /* GGTabBar.m in Sources */,
 				8C5697BF1C09708600FFB05A /* GGTabBarAppearanceKeys.m in Sources */,
 				8C1258A41C101183007FAC62 /* QDResultView.m in Sources */,
+				8C45AB921C16A9DD001A6323 /* RootTabBarViewController.m in Sources */,
 				8C1258AF1C10156F007FAC62 /* PieElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

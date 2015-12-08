@@ -25,10 +25,6 @@
     
     // set tabbar item image
     
-    UITabBarItem* thisItem = self.tabBarController.tabBar.items[2];
-    
-    [thisItem setImage:[Helper resizeImageWithSourceName:@"decide_for_group" AndScale:2]];
-    
 }
 
 @end
