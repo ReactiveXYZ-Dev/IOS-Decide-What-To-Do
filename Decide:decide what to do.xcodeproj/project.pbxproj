@@ -10,7 +10,6 @@
 		2EC63DD11BC0A292001521F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63DD01BC0A292001521F7 /* main.m */; };
 		2EC63DD41BC0A292001521F7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63DD31BC0A292001521F7 /* AppDelegate.m */; };
 		2EC63DD71BC0A292001521F7 /* QuickDecideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63DD61BC0A292001521F7 /* QuickDecideViewController.m */; };
-		2EC63DDA1BC0A292001521F7 /* MainStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EC63DD81BC0A292001521F7 /* MainStoryBoard.storyboard */; };
 		2EC63DDC1BC0A292001521F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2EC63DDB1BC0A292001521F7 /* Assets.xcassets */; };
 		2EC63DDF1BC0A292001521F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2EC63DDD1BC0A292001521F7 /* LaunchScreen.storyboard */; };
 		2EC63DEA1BC0A292001521F7 /* Decide_decide_what_to_doTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC63DE91BC0A292001521F7 /* Decide_decide_what_to_doTests.m */; };
@@ -30,6 +29,7 @@
 		8C45AB881C166020001A6323 /* decide_for_me.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C45AB871C166020001A6323 /* decide_for_me.png */; };
 		8C45AB8A1C166067001A6323 /* quick_decide.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C45AB891C166067001A6323 /* quick_decide.png */; };
 		8C45AB8D1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C45AB8C1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m */; };
+		8C45AB8F1C16A534001A6323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C45AB8E1C16A534001A6323 /* Main.storyboard */; };
 		8C5697BE1C09708600FFB05A /* GGTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697B91C09708600FFB05A /* GGTabBar.m */; };
 		8C5697BF1C09708600FFB05A /* GGTabBarAppearanceKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697BB1C09708600FFB05A /* GGTabBarAppearanceKeys.m */; };
 		8C5697C01C09708600FFB05A /* GGTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697BD1C09708600FFB05A /* GGTabBarController.m */; };
@@ -63,7 +63,6 @@
 		2EC63DD31BC0A292001521F7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		2EC63DD51BC0A292001521F7 /* QuickDecideViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuickDecideViewController.h; sourceTree = "<group>"; };
 		2EC63DD61BC0A292001521F7 /* QuickDecideViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QuickDecideViewController.m; sourceTree = "<group>"; };
-		2EC63DD91BC0A292001521F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainStoryBoard.storyboard; sourceTree = "<group>"; };
 		2EC63DDB1BC0A292001521F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2EC63DDE1BC0A292001521F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2EC63DE01BC0A292001521F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -101,6 +100,7 @@
 		8C45AB891C166067001A6323 /* quick_decide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quick_decide.png; sourceTree = "<group>"; };
 		8C45AB8B1C1661AE001A6323 /* UIScrollView+UpdateContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+UpdateContentSize.h"; path = "vendor/extensions/UIScrollView+UpdateContentSize.h"; sourceTree = "<group>"; };
 		8C45AB8C1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+UpdateContentSize.m"; path = "vendor/extensions/UIScrollView+UpdateContentSize.m"; sourceTree = "<group>"; };
+		8C45AB8E1C16A534001A6323 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8C5697B71C09708600FFB05A /* GGTabBar-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GGTabBar-Private.h"; sourceTree = "<group>"; };
 		8C5697B81C09708600FFB05A /* GGTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGTabBar.h; sourceTree = "<group>"; };
 		8C5697B91C09708600FFB05A /* GGTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGTabBar.m; sourceTree = "<group>"; };
@@ -223,8 +223,8 @@
 		2EC63E031BC0A2DB001521F7 /* views */ = {
 			isa = PBXGroup;
 			children = (
-				2EC63DD81BC0A292001521F7 /* MainStoryBoard.storyboard */,
 				2EC63DDD1BC0A292001521F7 /* LaunchScreen.storyboard */,
+				8C45AB8E1C16A534001A6323 /* Main.storyboard */,
 			);
 			name = views;
 			sourceTree = "<group>";
@@ -327,8 +327,6 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
-<<<<<<< Updated upstream
-=======
 		8C45AB7F1C165F2E001A6323 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -347,7 +345,6 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
->>>>>>> Stashed changes
 		8C5697B31C096E9E00FFB05A /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -538,8 +535,8 @@
 				8C45AB8A1C166067001A6323 /* quick_decide.png in Resources */,
 				2EC63DDF1BC0A292001521F7 /* LaunchScreen.storyboard in Resources */,
 				8C45AB861C166003001A6323 /* decide_for_group.png in Resources */,
+				8C45AB8F1C16A534001A6323 /* Main.storyboard in Resources */,
 				2EC63DDC1BC0A292001521F7 /* Assets.xcassets in Resources */,
-				2EC63DDA1BC0A292001521F7 /* MainStoryBoard.storyboard in Resources */,
 				8C45AB881C166020001A6323 /* decide_for_me.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -621,14 +618,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2EC63DD81BC0A292001521F7 /* MainStoryBoard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2EC63DD91BC0A292001521F7 /* Base */,
-			);
-			name = MainStoryBoard.storyboard;
-			sourceTree = "<group>";
-		};
 		2EC63DDD1BC0A292001521F7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
