@@ -24,6 +24,12 @@
 		8C1258B21C101908007FAC62 /* UIView+QuickSizeFetcher.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1258B11C101908007FAC62 /* UIView+QuickSizeFetcher.m */; };
 		8C1258BC1C10221E007FAC62 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C1258BB1C10221E007FAC62 /* Helper.m */; };
 		8C1258C11C11C592007FAC62 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C1258C01C11C592007FAC62 /* QuartzCore.framework */; };
+		8C45AB7B1C165E8C001A6323 /* DecideForMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C45AB7A1C165E8C001A6323 /* DecideForMeViewController.m */; };
+		8C45AB7E1C165EA3001A6323 /* DecideForGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C45AB7D1C165EA3001A6323 /* DecideForGroupViewController.m */; };
+		8C45AB861C166003001A6323 /* decide_for_group.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C45AB851C166003001A6323 /* decide_for_group.png */; };
+		8C45AB881C166020001A6323 /* decide_for_me.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C45AB871C166020001A6323 /* decide_for_me.png */; };
+		8C45AB8A1C166067001A6323 /* quick_decide.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C45AB891C166067001A6323 /* quick_decide.png */; };
+		8C45AB8D1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C45AB8C1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m */; };
 		8C5697BE1C09708600FFB05A /* GGTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697B91C09708600FFB05A /* GGTabBar.m */; };
 		8C5697BF1C09708600FFB05A /* GGTabBarAppearanceKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697BB1C09708600FFB05A /* GGTabBarAppearanceKeys.m */; };
 		8C5697C01C09708600FFB05A /* GGTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697BD1C09708600FFB05A /* GGTabBarController.m */; };
@@ -86,6 +92,15 @@
 		8C1258BA1C10221E007FAC62 /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helper.h; path = Self/Helper/Helper.h; sourceTree = "<group>"; };
 		8C1258BB1C10221E007FAC62 /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Helper.m; path = Self/Helper/Helper.m; sourceTree = "<group>"; };
 		8C1258C01C11C592007FAC62 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		8C45AB791C165E8C001A6323 /* DecideForMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecideForMeViewController.h; sourceTree = "<group>"; };
+		8C45AB7A1C165E8C001A6323 /* DecideForMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecideForMeViewController.m; sourceTree = "<group>"; };
+		8C45AB7C1C165EA3001A6323 /* DecideForGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecideForGroupViewController.h; sourceTree = "<group>"; };
+		8C45AB7D1C165EA3001A6323 /* DecideForGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecideForGroupViewController.m; sourceTree = "<group>"; };
+		8C45AB851C166003001A6323 /* decide_for_group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decide_for_group.png; sourceTree = "<group>"; };
+		8C45AB871C166020001A6323 /* decide_for_me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decide_for_me.png; sourceTree = "<group>"; };
+		8C45AB891C166067001A6323 /* quick_decide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quick_decide.png; sourceTree = "<group>"; };
+		8C45AB8B1C1661AE001A6323 /* UIScrollView+UpdateContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+UpdateContentSize.h"; path = "vendor/extensions/UIScrollView+UpdateContentSize.h"; sourceTree = "<group>"; };
+		8C45AB8C1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+UpdateContentSize.m"; path = "vendor/extensions/UIScrollView+UpdateContentSize.m"; sourceTree = "<group>"; };
 		8C5697B71C09708600FFB05A /* GGTabBar-Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "GGTabBar-Private.h"; sourceTree = "<group>"; };
 		8C5697B81C09708600FFB05A /* GGTabBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGTabBar.h; sourceTree = "<group>"; };
 		8C5697B91C09708600FFB05A /* GGTabBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGTabBar.m; sourceTree = "<group>"; };
@@ -154,6 +169,7 @@
 		2EC63DCE1BC0A292001521F7 /* Decide:decide what to do */ = {
 			isa = PBXGroup;
 			children = (
+				8C45AB7F1C165F2E001A6323 /* Resources */,
 				2EC63E091BC0AB64001521F7 /* constants */,
 				2EC63E051BC0A2E5001521F7 /* library */,
 				2EC63E041BC0A2DF001521F7 /* models */,
@@ -311,11 +327,36 @@
 			name = Helper;
 			sourceTree = "<group>";
 		};
+<<<<<<< Updated upstream
+=======
+		8C45AB7F1C165F2E001A6323 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8C45AB801C165F3A001A6323 /* Images */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		8C45AB801C165F3A001A6323 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8C45AB851C166003001A6323 /* decide_for_group.png */,
+				8C45AB871C166020001A6323 /* decide_for_me.png */,
+				8C45AB891C166067001A6323 /* quick_decide.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+>>>>>>> Stashed changes
 		8C5697B31C096E9E00FFB05A /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
 				2EC63DD51BC0A292001521F7 /* QuickDecideViewController.h */,
 				2EC63DD61BC0A292001521F7 /* QuickDecideViewController.m */,
+				8C45AB791C165E8C001A6323 /* DecideForMeViewController.h */,
+				8C45AB7A1C165E8C001A6323 /* DecideForMeViewController.m */,
+				8C45AB7C1C165EA3001A6323 /* DecideForGroupViewController.h */,
+				8C45AB7D1C165EA3001A6323 /* DecideForGroupViewController.m */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -367,6 +408,8 @@
 				8CA5CBFE1C056AC60020E58A /* NSNumber+RoundingUp.m */,
 				8C1258B01C101908007FAC62 /* UIView+QuickSizeFetcher.h */,
 				8C1258B11C101908007FAC62 /* UIView+QuickSizeFetcher.m */,
+				8C45AB8B1C1661AE001A6323 /* UIScrollView+UpdateContentSize.h */,
+				8C45AB8C1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m */,
 			);
 			name = extensions;
 			sourceTree = "<group>";
@@ -492,9 +535,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C45AB8A1C166067001A6323 /* quick_decide.png in Resources */,
 				2EC63DDF1BC0A292001521F7 /* LaunchScreen.storyboard in Resources */,
+				8C45AB861C166003001A6323 /* decide_for_group.png in Resources */,
 				2EC63DDC1BC0A292001521F7 /* Assets.xcassets in Resources */,
 				2EC63DDA1BC0A292001521F7 /* MainStoryBoard.storyboard in Resources */,
+				8C45AB881C166020001A6323 /* decide_for_me.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,7 +573,10 @@
 				8C12589E1C100912007FAC62 /* KLCPopup.m in Sources */,
 				8CA5CBF51C0567380020E58A /* QuickDecideObject.m in Sources */,
 				8C1258BC1C10221E007FAC62 /* Helper.m in Sources */,
+				8C45AB8D1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m in Sources */,
+				8C45AB7B1C165E8C001A6323 /* DecideForMeViewController.m in Sources */,
 				8CA5CC051C068BEF0020E58A /* DCForGroupObject.m in Sources */,
+				8C45AB7E1C165EA3001A6323 /* DecideForGroupViewController.m in Sources */,
 				2EC63E081BC0A647001521F7 /* DCForMeObject.m in Sources */,
 				2EC63DD41BC0A292001521F7 /* AppDelegate.m in Sources */,
 				8CA5CBFF1C056AC60020E58A /* NSNumber+RoundingUp.m in Sources */,

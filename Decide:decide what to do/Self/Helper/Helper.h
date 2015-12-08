@@ -18,4 +18,6 @@
 
 +(void)nslog:(NSString*)string;
 
++(UIImage*)resizeImageWithSourceName:(NSString*)imageName AndScale:(float)scale;
+
 @end

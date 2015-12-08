@@ -13,7 +13,7 @@
 
 +(NSString*)stringWithInteger:(NSInteger)integer{
     
-    return [NSString stringWithFormat:@"%i",integer];
+    return [NSString stringWithFormat:@"%li",(long)integer];
  
 }
 
@@ -27,6 +27,12 @@
 +(void)nslog:(NSString *)string{
     
     NSLog(@"%@",string);
+    
+}
+
++(UIImage*)resizeImageWithSourceName:(NSString *)imageName AndScale:(float)scale{
+    
+    return [UIImage imageWithCGImage:[UIImage imageNamed:imageName].CGImage scale:scale orientation:UIImageOrientationUp];
     
 }
 
