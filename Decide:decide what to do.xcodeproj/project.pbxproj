@@ -34,6 +34,10 @@
 		8C5697BE1C09708600FFB05A /* GGTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697B91C09708600FFB05A /* GGTabBar.m */; };
 		8C5697BF1C09708600FFB05A /* GGTabBarAppearanceKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697BB1C09708600FFB05A /* GGTabBarAppearanceKeys.m */; };
 		8C5697C01C09708600FFB05A /* GGTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5697BD1C09708600FFB05A /* GGTabBarController.m */; };
+		8C6F33981C16EA9C004D5ACF /* DFMTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F33961C16EA9C004D5ACF /* DFMTableViewCell.m */; };
+		8C6F33991C16EA9C004D5ACF /* DFMTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C6F33971C16EA9C004D5ACF /* DFMTableViewCell.xib */; };
+		8C6F339D1C16EB79004D5ACF /* DFMAddTaskTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6F339B1C16EB79004D5ACF /* DFMAddTaskTableViewCell.m */; };
+		8C6F339E1C16EB79004D5ACF /* DFMAddTaskTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8C6F339C1C16EB79004D5ACF /* DFMAddTaskTableViewCell.xib */; };
 		8CA5CBF51C0567380020E58A /* QuickDecideObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBF41C0567380020E58A /* QuickDecideObject.m */; };
 		8CA5CBFF1C056AC60020E58A /* NSNumber+RoundingUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBFE1C056AC60020E58A /* NSNumber+RoundingUp.m */; };
 		8CA5CC051C068BEF0020E58A /* DCForGroupObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC041C068BEF0020E58A /* DCForGroupObject.m */; };
@@ -111,6 +115,12 @@
 		8C5697BB1C09708600FFB05A /* GGTabBarAppearanceKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGTabBarAppearanceKeys.m; sourceTree = "<group>"; };
 		8C5697BC1C09708600FFB05A /* GGTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GGTabBarController.h; sourceTree = "<group>"; };
 		8C5697BD1C09708600FFB05A /* GGTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GGTabBarController.m; sourceTree = "<group>"; };
+		8C6F33951C16EA9C004D5ACF /* DFMTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DFMTableViewCell.h; path = views/DFMTableViewCell.h; sourceTree = "<group>"; };
+		8C6F33961C16EA9C004D5ACF /* DFMTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DFMTableViewCell.m; path = views/DFMTableViewCell.m; sourceTree = "<group>"; };
+		8C6F33971C16EA9C004D5ACF /* DFMTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DFMTableViewCell.xib; path = views/DFMTableViewCell.xib; sourceTree = "<group>"; };
+		8C6F339A1C16EB79004D5ACF /* DFMAddTaskTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DFMAddTaskTableViewCell.h; path = views/DFMAddTaskTableViewCell.h; sourceTree = "<group>"; };
+		8C6F339B1C16EB79004D5ACF /* DFMAddTaskTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DFMAddTaskTableViewCell.m; path = views/DFMAddTaskTableViewCell.m; sourceTree = "<group>"; };
+		8C6F339C1C16EB79004D5ACF /* DFMAddTaskTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = DFMAddTaskTableViewCell.xib; path = views/DFMAddTaskTableViewCell.xib; sourceTree = "<group>"; };
 		8CA5CBF31C0567380020E58A /* QuickDecideObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QuickDecideObject.h; path = models/QuickDecideObject.h; sourceTree = "<group>"; };
 		8CA5CBF41C0567380020E58A /* QuickDecideObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QuickDecideObject.m; path = models/QuickDecideObject.m; sourceTree = "<group>"; };
 		8CA5CBFD1C056AC60020E58A /* NSNumber+RoundingUp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSNumber+RoundingUp.h"; path = "vendor/extensions/NSNumber+RoundingUp.h"; sourceTree = "<group>"; };
@@ -226,6 +236,7 @@
 		2EC63E031BC0A2DB001521F7 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				8C6F33941C16EA6A004D5ACF /* DFM TableViewCells */,
 				2EC63DDD1BC0A292001521F7 /* LaunchScreen.storyboard */,
 				8C45AB8E1C16A534001A6323 /* Main.storyboard */,
 			);
@@ -394,6 +405,19 @@
 			name = GGTabBar;
 			sourceTree = "<group>";
 		};
+		8C6F33941C16EA6A004D5ACF /* DFM TableViewCells */ = {
+			isa = PBXGroup;
+			children = (
+				8C6F33951C16EA9C004D5ACF /* DFMTableViewCell.h */,
+				8C6F33961C16EA9C004D5ACF /* DFMTableViewCell.m */,
+				8C6F33971C16EA9C004D5ACF /* DFMTableViewCell.xib */,
+				8C6F339A1C16EB79004D5ACF /* DFMAddTaskTableViewCell.h */,
+				8C6F339B1C16EB79004D5ACF /* DFMAddTaskTableViewCell.m */,
+				8C6F339C1C16EB79004D5ACF /* DFMAddTaskTableViewCell.xib */,
+			);
+			name = "DFM TableViewCells";
+			sourceTree = "<group>";
+		};
 		8CA5CBF21C05671E0020E58A /* Quick Decide */ = {
 			isa = PBXGroup;
 			children = (
@@ -539,6 +563,8 @@
 			files = (
 				8C45AB8A1C166067001A6323 /* quick_decide.png in Resources */,
 				2EC63DDF1BC0A292001521F7 /* LaunchScreen.storyboard in Resources */,
+				8C6F339E1C16EB79004D5ACF /* DFMAddTaskTableViewCell.xib in Resources */,
+				8C6F33991C16EA9C004D5ACF /* DFMTableViewCell.xib in Resources */,
 				8C45AB861C166003001A6323 /* decide_for_group.png in Resources */,
 				8C45AB8F1C16A534001A6323 /* Main.storyboard in Resources */,
 				2EC63DDC1BC0A292001521F7 /* Assets.xcassets in Resources */,
@@ -570,6 +596,7 @@
 				8C1258AE1C10156F007FAC62 /* NSMutableArray+pieEx.m in Sources */,
 				8CA5CC091C0694270020E58A /* RoleObject.m in Sources */,
 				2EC63DD71BC0A292001521F7 /* QuickDecideViewController.m in Sources */,
+				8C6F33981C16EA9C004D5ACF /* DFMTableViewCell.m in Sources */,
 				8C1258AD1C10156F007FAC62 /* PieLayer.m in Sources */,
 				8C5697C01C09708600FFB05A /* GGTabBarController.m in Sources */,
 				8C12589E1C100912007FAC62 /* KLCPopup.m in Sources */,
@@ -584,6 +611,7 @@
 				8CA5CBFF1C056AC60020E58A /* NSNumber+RoundingUp.m in Sources */,
 				8C1258B21C101908007FAC62 /* UIView+QuickSizeFetcher.m in Sources */,
 				2EC63DD11BC0A292001521F7 /* main.m in Sources */,
+				8C6F339D1C16EB79004D5ACF /* DFMAddTaskTableViewCell.m in Sources */,
 				8C5697BE1C09708600FFB05A /* GGTabBar.m in Sources */,
 				8C5697BF1C09708600FFB05A /* GGTabBarAppearanceKeys.m in Sources */,
 				8C1258A41C101183007FAC62 /* QDResultView.m in Sources */,

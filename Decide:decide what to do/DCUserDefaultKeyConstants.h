@@ -8,3 +8,5 @@
 #import <Foundation/Foundation.h>
 
 static NSString* const DEFAULT_USERNAME_KEY = @"user_name";
+
+static NSString* const kDFM_ADD_NEW_TASK_NOTIFICATION_KEY = @"dfmaddnewtasknotfication";
