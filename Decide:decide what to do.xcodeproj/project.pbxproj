@@ -39,12 +39,14 @@
 		8C2556651C329C05007E3B66 /* DCFGResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C2556641C329C05007E3B66 /* DCFGResultView.m */; };
 		8C45AB7B1C165E8C001A6323 /* DecideForMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C45AB7A1C165E8C001A6323 /* DecideForMeViewController.m */; };
 		8C45AB7E1C165EA3001A6323 /* DecideForGroupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C45AB7D1C165EA3001A6323 /* DecideForGroupViewController.m */; };
-		8C45AB861C166003001A6323 /* decide_for_group.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C45AB851C166003001A6323 /* decide_for_group.png */; };
-		8C45AB881C166020001A6323 /* decide_for_me.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C45AB871C166020001A6323 /* decide_for_me.png */; };
-		8C45AB8A1C166067001A6323 /* quick_decide.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C45AB891C166067001A6323 /* quick_decide.png */; };
 		8C45AB8D1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C45AB8C1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m */; };
 		8C45AB8F1C16A534001A6323 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C45AB8E1C16A534001A6323 /* Main.storyboard */; };
 		8C45AB921C16A9DD001A6323 /* RootTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C45AB911C16A9DD001A6323 /* RootTabBarViewController.m */; };
+		8C4ACEA71C34DEB300BBB86D /* CarbonSwipeRefresh.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4ACEA01C34DEB300BBB86D /* CarbonSwipeRefresh.m */; };
+		8C4ACEA81C34DEB300BBB86D /* CarbonTabSwipeNavigation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4ACEA21C34DEB300BBB86D /* CarbonTabSwipeNavigation.m */; };
+		8C4ACEA91C34DEB300BBB86D /* CarbonTabSwipeSegmentedControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4ACEA41C34DEB300BBB86D /* CarbonTabSwipeSegmentedControl.m */; };
+		8C4ACEAA1C34DEB300BBB86D /* CarbonTabSwipeScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4ACEA61C34DEB300BBB86D /* CarbonTabSwipeScrollView.m */; };
+		8C4ACEAD1C34DF2400BBB86D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4ACEAC1C34DF2400BBB86D /* RootViewController.m */; };
 		8C5DE34A1C2EBA9C00ABB403 /* vip.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5DE3491C2EBA9C00ABB403 /* vip.png */; };
 		8C66A4651C291AA8007FBFA3 /* add_privilege_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C66A4641C291AA8007FBFA3 /* add_privilege_btn.png */; };
 		8C66A4681C296A02007FBFA3 /* ViewComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C66A4671C296A02007FBFA3 /* ViewComposer.m */; };
@@ -66,6 +68,15 @@
 		8CA5CBFF1C056AC60020E58A /* NSNumber+RoundingUp.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CBFE1C056AC60020E58A /* NSNumber+RoundingUp.m */; };
 		8CA5CC051C068BEF0020E58A /* DCForGroupObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC041C068BEF0020E58A /* DCForGroupObject.m */; };
 		8CA5CC091C0694270020E58A /* RoleObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CA5CC081C0694270020E58A /* RoleObject.m */; };
+		8CB7F01A1C34FD3500087AB7 /* decide_for_group.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7F0171C34FD3500087AB7 /* decide_for_group.png */; };
+		8CB7F01B1C34FD3500087AB7 /* decide_for_group@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7F0181C34FD3500087AB7 /* decide_for_group@2x.png */; };
+		8CB7F01C1C34FD3500087AB7 /* decide_for_group@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7F0191C34FD3500087AB7 /* decide_for_group@3x.png */; };
+		8CB7F0201C34FD8800087AB7 /* quick_decide.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7F01D1C34FD8800087AB7 /* quick_decide.png */; };
+		8CB7F0211C34FD8800087AB7 /* quick_decide@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7F01E1C34FD8800087AB7 /* quick_decide@2x.png */; };
+		8CB7F0221C34FD8800087AB7 /* quick_decide@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7F01F1C34FD8800087AB7 /* quick_decide@3x.png */; };
+		8CB7F0261C34FDBB00087AB7 /* decide_for_me.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7F0231C34FDBB00087AB7 /* decide_for_me.png */; };
+		8CB7F0271C34FDBB00087AB7 /* decide_for_me@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7F0241C34FDBB00087AB7 /* decide_for_me@2x.png */; };
+		8CB7F0281C34FDBB00087AB7 /* decide_for_me@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8CB7F0251C34FDBB00087AB7 /* decide_for_me@3x.png */; };
 		8CE5CA351C2402CA00EFB1E5 /* DCFMTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CE5CA341C2402CA00EFB1E5 /* DCFMTextField.m */; };
 		8CEC8C3C1C3001A50042CAED /* BSProgressButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CEC8C3B1C3001A50042CAED /* BSProgressButtonView.m */; };
 /* End PBXBuildFile section */
@@ -191,14 +202,22 @@
 		8C45AB7A1C165E8C001A6323 /* DecideForMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecideForMeViewController.m; sourceTree = "<group>"; };
 		8C45AB7C1C165EA3001A6323 /* DecideForGroupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecideForGroupViewController.h; sourceTree = "<group>"; };
 		8C45AB7D1C165EA3001A6323 /* DecideForGroupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DecideForGroupViewController.m; sourceTree = "<group>"; };
-		8C45AB851C166003001A6323 /* decide_for_group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decide_for_group.png; sourceTree = "<group>"; };
-		8C45AB871C166020001A6323 /* decide_for_me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decide_for_me.png; sourceTree = "<group>"; };
-		8C45AB891C166067001A6323 /* quick_decide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quick_decide.png; sourceTree = "<group>"; };
 		8C45AB8B1C1661AE001A6323 /* UIScrollView+UpdateContentSize.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+UpdateContentSize.h"; path = "vendor/extensions/UIScrollView+UpdateContentSize.h"; sourceTree = "<group>"; };
 		8C45AB8C1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+UpdateContentSize.m"; path = "vendor/extensions/UIScrollView+UpdateContentSize.m"; sourceTree = "<group>"; };
 		8C45AB8E1C16A534001A6323 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		8C45AB901C16A9DD001A6323 /* RootTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootTabBarViewController.h; sourceTree = "<group>"; };
 		8C45AB911C16A9DD001A6323 /* RootTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootTabBarViewController.m; sourceTree = "<group>"; };
+		8C4ACE9E1C34DEB300BBB86D /* CarbonKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonKit.h; sourceTree = "<group>"; };
+		8C4ACE9F1C34DEB300BBB86D /* CarbonSwipeRefresh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonSwipeRefresh.h; sourceTree = "<group>"; };
+		8C4ACEA01C34DEB300BBB86D /* CarbonSwipeRefresh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonSwipeRefresh.m; sourceTree = "<group>"; };
+		8C4ACEA11C34DEB300BBB86D /* CarbonTabSwipeNavigation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonTabSwipeNavigation.h; sourceTree = "<group>"; };
+		8C4ACEA21C34DEB300BBB86D /* CarbonTabSwipeNavigation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeNavigation.m; sourceTree = "<group>"; };
+		8C4ACEA31C34DEB300BBB86D /* CarbonTabSwipeSegmentedControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonTabSwipeSegmentedControl.h; sourceTree = "<group>"; };
+		8C4ACEA41C34DEB300BBB86D /* CarbonTabSwipeSegmentedControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeSegmentedControl.m; sourceTree = "<group>"; };
+		8C4ACEA51C34DEB300BBB86D /* CarbonTabSwipeScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarbonTabSwipeScrollView.h; sourceTree = "<group>"; };
+		8C4ACEA61C34DEB300BBB86D /* CarbonTabSwipeScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarbonTabSwipeScrollView.m; sourceTree = "<group>"; };
+		8C4ACEAB1C34DF2400BBB86D /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		8C4ACEAC1C34DF2400BBB86D /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		8C5DE3491C2EBA9C00ABB403 /* vip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vip.png; sourceTree = "<group>"; };
 		8C66A4641C291AA8007FBFA3 /* add_privilege_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_privilege_btn.png; sourceTree = "<group>"; };
 		8C66A4661C296A02007FBFA3 /* ViewComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewComposer.h; path = Self/Helper/ViewComposer.h; sourceTree = "<group>"; };
@@ -235,6 +254,15 @@
 		8CA5CC041C068BEF0020E58A /* DCForGroupObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCForGroupObject.m; path = models/DCForGroupObject.m; sourceTree = "<group>"; };
 		8CA5CC071C0694270020E58A /* RoleObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RoleObject.h; path = models/Role/RoleObject.h; sourceTree = "<group>"; };
 		8CA5CC081C0694270020E58A /* RoleObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RoleObject.m; path = models/Role/RoleObject.m; sourceTree = "<group>"; };
+		8CB7F0171C34FD3500087AB7 /* decide_for_group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decide_for_group.png; sourceTree = "<group>"; };
+		8CB7F0181C34FD3500087AB7 /* decide_for_group@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "decide_for_group@2x.png"; sourceTree = "<group>"; };
+		8CB7F0191C34FD3500087AB7 /* decide_for_group@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "decide_for_group@3x.png"; sourceTree = "<group>"; };
+		8CB7F01D1C34FD8800087AB7 /* quick_decide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = quick_decide.png; sourceTree = "<group>"; };
+		8CB7F01E1C34FD8800087AB7 /* quick_decide@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quick_decide@2x.png"; sourceTree = "<group>"; };
+		8CB7F01F1C34FD8800087AB7 /* quick_decide@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "quick_decide@3x.png"; sourceTree = "<group>"; };
+		8CB7F0231C34FDBB00087AB7 /* decide_for_me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = decide_for_me.png; sourceTree = "<group>"; };
+		8CB7F0241C34FDBB00087AB7 /* decide_for_me@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "decide_for_me@2x.png"; sourceTree = "<group>"; };
+		8CB7F0251C34FDBB00087AB7 /* decide_for_me@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "decide_for_me@3x.png"; sourceTree = "<group>"; };
 		8CE5CA331C2402CA00EFB1E5 /* DCFMTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DCFMTextField.h; path = Self/DCFMTextField/DCFMTextField.h; sourceTree = "<group>"; };
 		8CE5CA341C2402CA00EFB1E5 /* DCFMTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCFMTextField.m; path = Self/DCFMTextField/DCFMTextField.m; sourceTree = "<group>"; };
 		8CEC8C3A1C3001A50042CAED /* BSProgressButtonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSProgressButtonView.h; sourceTree = "<group>"; };
@@ -539,14 +567,36 @@
 		8C45AB801C165F3A001A6323 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				8CB7F0231C34FDBB00087AB7 /* decide_for_me.png */,
+				8CB7F0241C34FDBB00087AB7 /* decide_for_me@2x.png */,
+				8CB7F0251C34FDBB00087AB7 /* decide_for_me@3x.png */,
+				8CB7F0171C34FD3500087AB7 /* decide_for_group.png */,
+				8CB7F0181C34FD3500087AB7 /* decide_for_group@2x.png */,
+				8CB7F0191C34FD3500087AB7 /* decide_for_group@3x.png */,
 				8C2130261C3256E9002E60BE /* vip_assigned.png */,
 				8C5DE3491C2EBA9C00ABB403 /* vip.png */,
 				8C66A4641C291AA8007FBFA3 /* add_privilege_btn.png */,
-				8C45AB851C166003001A6323 /* decide_for_group.png */,
-				8C45AB871C166020001A6323 /* decide_for_me.png */,
-				8C45AB891C166067001A6323 /* quick_decide.png */,
+				8CB7F01D1C34FD8800087AB7 /* quick_decide.png */,
+				8CB7F01E1C34FD8800087AB7 /* quick_decide@2x.png */,
+				8CB7F01F1C34FD8800087AB7 /* quick_decide@3x.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		8C4ACE9D1C34DEA600BBB86D /* Carbonkit */ = {
+			isa = PBXGroup;
+			children = (
+				8C4ACE9E1C34DEB300BBB86D /* CarbonKit.h */,
+				8C4ACE9F1C34DEB300BBB86D /* CarbonSwipeRefresh.h */,
+				8C4ACEA01C34DEB300BBB86D /* CarbonSwipeRefresh.m */,
+				8C4ACEA11C34DEB300BBB86D /* CarbonTabSwipeNavigation.h */,
+				8C4ACEA21C34DEB300BBB86D /* CarbonTabSwipeNavigation.m */,
+				8C4ACEA31C34DEB300BBB86D /* CarbonTabSwipeSegmentedControl.h */,
+				8C4ACEA41C34DEB300BBB86D /* CarbonTabSwipeSegmentedControl.m */,
+				8C4ACEA51C34DEB300BBB86D /* CarbonTabSwipeScrollView.h */,
+				8C4ACEA61C34DEB300BBB86D /* CarbonTabSwipeScrollView.m */,
+			);
+			name = Carbonkit;
 			sourceTree = "<group>";
 		};
 		8C5697B31C096E9E00FFB05A /* view controllers */ = {
@@ -560,6 +610,8 @@
 				8C45AB7D1C165EA3001A6323 /* DecideForGroupViewController.m */,
 				8C45AB901C16A9DD001A6323 /* RootTabBarViewController.h */,
 				8C45AB911C16A9DD001A6323 /* RootTabBarViewController.m */,
+				8C4ACEAB1C34DF2400BBB86D /* RootViewController.h */,
+				8C4ACEAC1C34DF2400BBB86D /* RootViewController.m */,
 			);
 			name = "view controllers";
 			sourceTree = "<group>";
@@ -574,6 +626,7 @@
 		8C5697B51C09705100FFB05A /* vendors */ = {
 			isa = PBXGroup;
 			children = (
+				8C4ACE9D1C34DEA600BBB86D /* Carbonkit */,
 				8C2130291C325CC7002E60BE /* M13ProgressView */,
 				8C3F1A0E1C310A4900C50DEC /* Transforming Digits */,
 				8C7159D01C3000B6005B5715 /* BSProgressButton */,
@@ -832,16 +885,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8CB7F01B1C34FD3500087AB7 /* decide_for_group@2x.png in Resources */,
+				8CB7F0271C34FDBB00087AB7 /* decide_for_me@2x.png in Resources */,
+				8CB7F01C1C34FD3500087AB7 /* decide_for_group@3x.png in Resources */,
 				8CA4B9351C24540600D3CCEC /* libReveal.dylib in Resources */,
+				8CB7F01A1C34FD3500087AB7 /* decide_for_group.png in Resources */,
 				8C66A4651C291AA8007FBFA3 /* add_privilege_btn.png in Resources */,
-				8C45AB8A1C166067001A6323 /* quick_decide.png in Resources */,
+				8CB7F0221C34FD8800087AB7 /* quick_decide@3x.png in Resources */,
+				8CB7F0281C34FDBB00087AB7 /* decide_for_me@3x.png in Resources */,
 				8C2130271C3256E9002E60BE /* vip_assigned.png in Resources */,
+				8CB7F0261C34FDBB00087AB7 /* decide_for_me.png in Resources */,
 				8C5DE34A1C2EBA9C00ABB403 /* vip.png in Resources */,
 				2EC63DDF1BC0A292001521F7 /* LaunchScreen.storyboard in Resources */,
-				8C45AB861C166003001A6323 /* decide_for_group.png in Resources */,
 				8C45AB8F1C16A534001A6323 /* Main.storyboard in Resources */,
+				8CB7F0211C34FD8800087AB7 /* quick_decide@2x.png in Resources */,
+				8CB7F0201C34FD8800087AB7 /* quick_decide.png in Resources */,
 				2EC63DDC1BC0A292001521F7 /* Assets.xcassets in Resources */,
-				8C45AB881C166020001A6323 /* decide_for_me.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -907,6 +966,7 @@
 				8C6F33981C16EA9C004D5ACF /* DFMTableViewCell.m in Sources */,
 				8C1258AD1C10156F007FAC62 /* PieLayer.m in Sources */,
 				8C12589E1C100912007FAC62 /* KLCPopup.m in Sources */,
+				8C4ACEAD1C34DF2400BBB86D /* RootViewController.m in Sources */,
 				8CE5CA351C2402CA00EFB1E5 /* DCFMTextField.m in Sources */,
 				8C2130211C310ADA002E60BE /* CAAnimation+Blocks.m in Sources */,
 				8C2130241C310ADA002E60BE /* MFLTransformingDigit.m in Sources */,
@@ -914,6 +974,7 @@
 				8C2556651C329C05007E3B66 /* DCFGResultView.m in Sources */,
 				8C1258BC1C10221E007FAC62 /* Helper.m in Sources */,
 				8CEC8C3C1C3001A50042CAED /* BSProgressButtonView.m in Sources */,
+				8C4ACEAA1C34DEB300BBB86D /* CarbonTabSwipeScrollView.m in Sources */,
 				8C25565F1C325D62007E3B66 /* M13ProgressView.m in Sources */,
 				8C45AB8D1C1661AE001A6323 /* UIScrollView+UpdateContentSize.m in Sources */,
 				8C7159CF1C2FC976005B5715 /* DCFGGetPrivilegeView.m in Sources */,
@@ -923,7 +984,9 @@
 				8C2130221C310ADA002E60BE /* MFLTransformingClock.m in Sources */,
 				8C2556621C325ECF007E3B66 /* M13ProgressViewRing.m in Sources */,
 				8CA5CC051C068BEF0020E58A /* DCForGroupObject.m in Sources */,
+				8C4ACEA91C34DEB300BBB86D /* CarbonTabSwipeSegmentedControl.m in Sources */,
 				8C45AB7E1C165EA3001A6323 /* DecideForGroupViewController.m in Sources */,
+				8C4ACEA71C34DEB300BBB86D /* CarbonSwipeRefresh.m in Sources */,
 				8C01BC0D1C280CC000E07508 /* DFGTaskTableViewCell.m in Sources */,
 				2EC63E081BC0A647001521F7 /* DCForMeObject.m in Sources */,
 				2EC63DD41BC0A292001521F7 /* AppDelegate.m in Sources */,
@@ -933,6 +996,7 @@
 				8C6F339D1C16EB79004D5ACF /* DFMAddTaskTableViewCell.m in Sources */,
 				8C1258A41C101183007FAC62 /* QDResultView.m in Sources */,
 				8C45AB921C16A9DD001A6323 /* RootTabBarViewController.m in Sources */,
+				8C4ACEA81C34DEB300BBB86D /* CarbonTabSwipeNavigation.m in Sources */,
 				8C1258AF1C10156F007FAC62 /* PieElement.m in Sources */,
 				8C2130231C310ADA002E60BE /* MFLTransformingScoreBoard.m in Sources */,
 				8C25565D1C325D62007E3B66 /* M13ProgressHUD.m in Sources */,
@@ -1098,7 +1162,7 @@
 					"\"$(SYSTEM_APPS_DIR)/Reveal.app/Contents/SharedSupport/iOS-Libraries\"",
 				);
 				INFOPLIST_FILE = "Decide:decide what to do/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",
@@ -1138,7 +1202,7 @@
 					do,
 				);
 				INFOPLIST_FILE = "Decide:decide what to do/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"-ObjC",

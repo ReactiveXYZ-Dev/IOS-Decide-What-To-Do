@@ -57,16 +57,18 @@
     if ([WCSession isSupported]) {
         
         WCSession *session = [WCSession defaultSession];
+        
         session.delegate = self;
+        
         [session activateSession];
         
     }
     
-    // create variables
+    // create model
     qdModel = [[QuickDecideObject alloc]init];
     
     // initialize container
-    _container = [[UIScrollView alloc]initWithFrame:self.view.bounds];
+    _container = [[UIScrollView alloc]initWithFrame:CGRectMake(0, 0, [self.view getBoundWidth],[self.view getBoundHeight] - 50)];
     
     [_container setScrollEnabled:YES];
     
@@ -100,6 +102,7 @@
     
     // resize content size
     [_container updateContentSize];
+    
 }
 
 - (void)didReceiveMemoryWarning {

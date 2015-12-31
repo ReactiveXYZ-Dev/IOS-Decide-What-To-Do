@@ -8,13 +8,6 @@
 
 #import "AppDelegate.h"
 
-#import "QuickDecideViewController.h"
-
-#import "DecideForMeViewController.h"
-
-#import "DecideForGroupViewController.h"
-
-#import "Helper.h"
 @interface AppDelegate ()
 
 @end

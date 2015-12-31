@@ -141,7 +141,7 @@ static char kBtnReceiverKey;
     
     NSDictionary* buttonViews = NSDictionaryOfVariableBindings(tableViewsContainer,_decideBtn,_resetBtn);
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[tableViewsContainer]-(30)-[_decideBtn]-(40)-[_resetBtn]-(30)-|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:buttonViews]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[tableViewsContainer]-(30)-[_decideBtn]-(30)-[_resetBtn]-(50)-|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:buttonViews]];
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(60)-[_decideBtn]-(60)-|" options:0 metrics:nil views:buttonViews]];
     
