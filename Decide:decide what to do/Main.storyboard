@@ -56,24 +56,16 @@
                     <view key="view" contentMode="scaleToFill" id="OGO-Ze-63G">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="q1H-vo-O3n">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="259"/>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="UYX-49-q5O" id="cxO-Ws-oFu"/>
-                                    <outlet property="delegate" destination="UYX-49-q5O" id="pxu-WI-8e3"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Decide For Me" id="FXF-cz-qYF"/>
-                    <connections>
-                        <outlet property="taskListTableView" destination="q1H-vo-O3n" id="DJO-7h-eZe"/>
-                    </connections>
+                    <navigationItem key="navigationItem" title="Decide For Me" id="FXF-cz-qYF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0bs-4u-LOV">
+                            <connections>
+                                <action selector="addNewTaskBtn:" destination="UYX-49-q5O" id="APq-CV-Dhm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fwt-5r-CXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

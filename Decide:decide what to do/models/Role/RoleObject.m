@@ -70,6 +70,22 @@
     
 }
 
+-(BOOL)isAlreadyVIP{
+    
+    return chanceMap.allKeys.count > 0;
+    
+}
+
+-(void)reload{
+    
+    // reset assigned task
+    assignedTasks = [[NSMutableArray alloc]init];
+    
+    // reset chancemap
+    chanceMap = [[NSMutableDictionary alloc]init];
+    
+}
+
 - (NSString *)description
 {
     return [NSString stringWithFormat:@"A role with name %@ and assigned with %li tasks which are %@", _name,(long)assignedTasks.count,assignedTasks];

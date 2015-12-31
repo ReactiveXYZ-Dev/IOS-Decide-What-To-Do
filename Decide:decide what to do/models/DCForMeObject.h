@@ -42,6 +42,17 @@
 
 /**
  
+ * @brief   Remove all items
+ 
+ * @param   nil
+ 
+ * @return  void
+ 
+ */
+-(void)reset;
+
+/**
+ 
  * @brief   Get lists of activities in NSString
  
  * @param   nil

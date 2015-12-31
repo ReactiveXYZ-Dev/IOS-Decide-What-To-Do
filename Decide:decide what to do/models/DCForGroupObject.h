@@ -19,12 +19,15 @@ typedef NS_ENUM(NSInteger,RatioCheckedResult) {
     RatioCheckedUnderloaded,
     
     RatioCheckedUndefined
-    
 };
 
 @interface DCForGroupObject : NSObject<ShouldSaveOutputToFile>
 
 @property (assign,nonatomic) RatioCheckedResult checkedResult;
+
+@property(strong,nonatomic)NSMutableArray<RoleObject*>* roles;
+
+@property(strong,nonatomic)NSMutableArray* tasks;
 
 /**
  
@@ -50,9 +53,9 @@ typedef NS_ENUM(NSInteger,RatioCheckedResult) {
 
 -(void)addTask:(NSString*)task;
 
--(void)removeRole:(RoleObject*)role;
+-(void)removeRole:(NSString*)roleName;
 
--(void)removeTask:(RoleObject*)task;
+-(void)removeTask:(NSString*)task;
 
 -(void)assignExtraTasks:(NSInteger)numOfTasks ToRoleWithName:(NSString *)rolename;
 
@@ -87,6 +90,28 @@ typedef NS_ENUM(NSInteger,RatioCheckedResult) {
 
 /**
  
+ * @brief   Find index of a role with name
+ 
+ * @param   NSString name
+ 
+ * @return  NSInteger:name
+ 
+ */
+-(NSInteger)indexOfRoleWithName:(NSString*)name;
+
+/**
+ 
+ * @brief   Check if a role has already owned some privileges
+ 
+ * @param   NSString roleName
+ 
+ * @return  BOOL
+ 
+ */
+-(BOOL)isAlreadyVIPForRoleWithName:(NSString*)roleName;
+
+/**
+ 
  * @brief   Decide for a group of people by assigning their tasks in a set priority, that is the first one in the role objects array get to choose first
  
  * @param   nil
@@ -100,12 +125,45 @@ typedef NS_ENUM(NSInteger,RatioCheckedResult) {
  
  * @brief   Decide for a group by assigning their tasks in a random priority, that is a random role is selected after each loop in an unordered manner
  
- * @param
+ * @param   nil
  
- * @return
+ * @return  NSArray
  
  */
 -(NSArray<RoleObject*> *)decideWithRandomPriority;
+
+/**
+ 
+ * @brief   Remove all roles/tasks
+ 
+ * @param   nil
+ 
+ * @return  void
+ 
+ */
+-(void)reset;
+
+/**
+ 
+ * @brief   Reload roles and tasks with original data
+ 
+ * @param   nil
+ 
+ * @return  nil
+ 
+ */
+-(void)reloadData;
+
+/**
+ 
+ * @brief   Generate a random privilege percentage for a participant
+ 
+ * @param   nil
+ 
+ * @return  int
+ 
+ */
+-(int)generateLuckyPercentage;
 
 /**
  

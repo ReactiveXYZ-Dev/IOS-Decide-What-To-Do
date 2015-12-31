@@ -28,4 +28,8 @@
 
 -(NSArray*)retrieveAssignedTasks;
 
+-(BOOL)isAlreadyVIP;
+
+-(void)reload;
+
 @end

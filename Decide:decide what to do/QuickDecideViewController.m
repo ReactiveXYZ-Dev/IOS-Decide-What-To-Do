@@ -5,6 +5,8 @@
 //  Created by YINGGUANG CHEN on 4/10/2015.
 //  Copyright © 2015 Future Innovation Studio. All rights reserved.
 //
+
+// normal VC stuff
 #import <QuartzCore/QuartzCore.h>
 
 #import "QuickDecideViewController.h"
@@ -21,7 +23,12 @@
 
 #import "KLCPopup.h"
 
-@interface QuickDecideViewController (){
+#import "ViewComposer.h"
+
+// watch connectivity
+#import <WatchConnectivity/WatchConnectivity.h>
+
+@interface QuickDecideViewController ()<WCSessionDelegate>{
 
     QuickDecideObject* qdModel;
     
@@ -45,6 +52,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // load watch connectivity
+    if ([WCSession isSupported]) {
+        
+        WCSession *session = [WCSession defaultSession];
+        session.delegate = self;
+        [session activateSession];
+        
+    }
     
     // create variables
     qdModel = [[QuickDecideObject alloc]init];
@@ -73,6 +89,8 @@
     
     [_decideBtn setTitle:@"Decide Now!" forState:UIControlStateNormal];
     
+    [_decideBtn.titleLabel setFont:[UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:28]];
+    
     [_container addSubview:_decideBtn];
     
     // add QDResult view
@@ -91,70 +109,6 @@
     // Dispose of any resources that can be recreated.
 }
 #pragma mark - Private Methods
--(UIView*)generatePopupResultViewWithDecision:(BOOL)result{
-    
-    NSString* resultString = [[NSString alloc]init];
-    
-    NSString* promptString = [[NSString alloc]init];
-    
-    if (result) {
-        
-        resultString = @"YES";
-        
-        promptString = @"Great!!";
-        
-    }else{
-        
-        resultString = @"NO";
-        
-        promptString = @"Alright..";
-        
-    }
-    
-    // Generate content view to present
-    UIView* contentView = [[UIView alloc] init];
-    contentView.translatesAutoresizingMaskIntoConstraints = NO;
-    contentView.backgroundColor = [UIColor colorWithRed:(184.0/255.0) green:(233.0/255.0) blue:(122.0/255.0) alpha:1.0];
-    contentView.layer.cornerRadius = 12.0;
-    
-    UILabel* dismissLabel = [[UILabel alloc] init];
-    dismissLabel.translatesAutoresizingMaskIntoConstraints = NO;
-    dismissLabel.backgroundColor = [UIColor clearColor];
-    dismissLabel.textColor = [UIColor whiteColor];
-    dismissLabel.font = [UIFont boldSystemFontOfSize:72.0];
-    dismissLabel.text = resultString;
-    
-    UIButton* dismissButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    dismissButton.translatesAutoresizingMaskIntoConstraints = NO;
-    dismissButton.contentEdgeInsets = UIEdgeInsetsMake(10, 20, 10, 20);
-    dismissButton.backgroundColor = [UIColor colorWithRed:(0.0/255.0) green:(204.0/255.0) blue:(134.0/255.0) alpha:1.0];
-    [dismissButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    [dismissButton setTitleColor:[[dismissButton titleColorForState:UIControlStateNormal] colorWithAlphaComponent:0.5] forState:UIControlStateHighlighted];
-    dismissButton.titleLabel.font = [UIFont boldSystemFontOfSize:16.0];
-    [dismissButton setTitle:promptString forState:UIControlStateNormal];
-    dismissButton.layer.cornerRadius = 6.0;
-    [dismissButton addTarget:self action:@selector(dismissButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [contentView addSubview:dismissLabel];
-    [contentView addSubview:dismissButton];
-    
-    NSDictionary* views = NSDictionaryOfVariableBindings(contentView, dismissButton, dismissLabel);
-    
-    [contentView addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(16)-[dismissLabel]-(10)-[dismissButton]-(24)-|"
-                                             options:NSLayoutFormatAlignAllCenterX
-                                             metrics:nil
-                                               views:views]];
-    
-    [contentView addConstraints:
-     [NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(36)-[dismissLabel]-(36)-|"
-                                             options:0
-                                             metrics:nil
-                                               views:views]];
-    
-    return contentView;
-    
-}
 
 -(void)dismissButtonPressed:(id)sender
 {
@@ -186,11 +140,29 @@
     }
     
     // present popup
-    KLCPopup* popup = [KLCPopup popupWithContentView:[self generatePopupResultViewWithDecision:result] showType:KLCPopupShowTypeBounceInFromTop dismissType:KLCPopupDismissTypeBounceOutToBottom maskType:KLCPopupMaskTypeDimmed dismissOnBackgroundTouch:YES dismissOnContentTouch:NO];
+    KLCPopup* popup = [KLCPopup popupWithContentView:[[ViewComposer sharedComposer] composeQuickDecisionPopupWithResult:result actionTarget:self andSelector:@selector(dismissButtonPressed:)] showType:KLCPopupShowTypeBounceInFromTop dismissType:KLCPopupDismissTypeBounceOutToBottom maskType:KLCPopupMaskTypeDimmed dismissOnBackgroundTouch:YES dismissOnContentTouch:NO];
     
     [popup show];
 }
 
-#pragma mark - Tests
+#pragma mark - WatchConnectivity Delegate
+-(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(nonnull void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler{
+    
+    NSString* action = [message objectForKey:@"action"];
+    
+    if ([action isEqualToString:@"quick_decide"]) {
+        
+        BOOL result = [qdModel decide];
+        
+        NSLog(@"%i",(int)result);
+        
+        NSString* resultString = result?@"YES":@"NO";
+        
+        replyHandler(@{@"response":resultString});
+        
+        
+    }
+    
+}
 
 @end

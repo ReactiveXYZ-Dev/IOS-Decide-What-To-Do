@@ -18,6 +18,19 @@
 
 +(void)nslog:(NSString*)string;
 
++(void)nslogFrame:(CGRect)frame;
+
 +(UIImage*)resizeImageWithSourceName:(NSString*)imageName AndScale:(float)scale;
+
++(UIColor*)colorFromHex:(NSString*)hex;
+
++(BOOL)is:(int)number inRangeBetween:(int)a and:(int)b;
+
++(void)setUserDefault:(NSString*)name WithObject:(id)object;
+
++(id)getObjectFromUserDefaultWithName:(NSString*)name;
+
++(void)removeObjectFromUserDefaultWithName:(NSString*)name;
+
 
 @end

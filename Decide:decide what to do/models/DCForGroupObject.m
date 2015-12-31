@@ -14,15 +14,11 @@
     
     long numOfExtraTasksSomeoneHasToDo;
     
-    NSMutableArray<RoleObject*>* rolesCopy;
-    
-    NSMutableArray* tasksCopy;
-    
 }
 
-@property(strong,nonatomic)NSMutableArray<RoleObject*>* roles;
+@property (strong,nonatomic)NSMutableArray<RoleObject*>* rolesCopy;
 
-@property(strong,nonatomic)NSMutableArray* tasks;
+@property (strong,nonatomic)NSMutableArray* tasksCopy;
 
 @end
 
@@ -39,16 +35,37 @@
     
     if (self = [super init]) {
         
-        // init data source
-        _roles = [roles mutableCopy];
+        // init variables
+        _roles = [[NSMutableArray alloc]init];
         
-        _tasks = [tasks mutableCopy];
+        _tasks = [[NSMutableArray alloc]init];
+        
+        // load the roles data
+        for (NSString* roleName in roles) {
+            
+            [self addRole:roleName];
+            
+        }
+        
+        // load the tasks data
+        _tasks = [NSMutableArray arrayWithArray:tasks];
         
         // prepare copies of data for future use
         [self prepareCopiesOfData];
         
         // set num of tasks to do for each role
-        [self autoAssignTasksToEachRole];
+        if (_roles.count == 0 || tasks.count == 0) {
+            
+            numOfExtraTasksSomeoneHasToDo = 0;
+            
+            numOfTasksForEachRole = 0;
+            
+        }else{
+            
+          [self autoAssignTasksToEachRole];
+            
+        }
+        
         
     }
 
@@ -57,9 +74,9 @@
 
 -(void)prepareCopiesOfData{
     
-    rolesCopy = [_roles mutableCopy];
+    _rolesCopy = [NSMutableArray arrayWithArray:[_roles mutableCopy]];
     
-    tasksCopy = [_tasks mutableCopy];
+    _tasksCopy = [NSMutableArray arrayWithArray:[_tasks mutableCopy]];
     
 }
 
@@ -106,7 +123,6 @@
     }
     
     // assign the num to each role
-    
     for (RoleObject* role in _roles) {
         
         role.numOfTasksToDo = numOfTasksForEachRole;
@@ -115,15 +131,19 @@
     
 }
 
--(void)addRole:(RoleObject *)role{
+-(void)addRole:(NSString *)roleName{
     
-    [_roles addObject:role];
+    [_roles addObject:[[RoleObject alloc]initWithName:roleName]];
+    
+    [self prepareCopiesOfData];
     
 }
 
--(void)removeRole:(RoleObject *)role{
+-(void)removeRole:(NSString *)roleName{
     
-    [_roles removeObject:role];
+    [_roles removeObject:[self findRoleWithName:roleName]];
+    
+    [self prepareCopiesOfData];
     
 }
 
@@ -131,11 +151,15 @@
     
     [_tasks addObject:task];
     
+    [self prepareCopiesOfData];
+    
 }
 
 -(void)removeTask:(NSString *)task{
-    
+
     [_tasks removeObject:task];
+    
+    [self prepareCopiesOfData];
 }
 
 
@@ -236,9 +260,31 @@
     return RatioCheckedUndefined;
 }
 
+-(NSInteger)indexOfRoleWithName:(NSString *)name{
+    
+    for (int i = 0 ; i <=_roles.count; i++) {
+        
+        if ([_roles[i].name isEqualToString:name]) {
+            
+            return i;
+            
+        }
+        
+    }
+    
+    return 0;
+    
+}
 
+-(BOOL)isAlreadyVIPForRoleWithName:(NSString *)roleName{
+    
+    return [[self findRoleWithName:roleName] isAlreadyVIP];
+    
+}
 
 -(NSArray<RoleObject*>*)decideWithSetPriority{
+    // reassign number of tasks
+    [self autoAssignTasksToEachRole];
     
     // loop through roles
     for (RoleObject* role in _roles) {
@@ -247,12 +293,12 @@
         [self modifyRole:role];
     }
     
-    return [_roles copy];
+    return _roles;
 }
 
 -(NSArray<RoleObject*> *)decideWithRandomPriority{
-    
-    
+    // reassign number of tasks
+    [self autoAssignTasksToEachRole];
     
     // initialize the index array
     NSMutableArray<NSNumber*>* indexArray = [[NSMutableArray alloc]init];
@@ -265,9 +311,8 @@
     
     // loop through and choose a random index
     while (indexArray.count > 0) {
-        
         // get a random index
-        NSNumber* randomIndex = indexArray[arc4random_uniform((int)_roles.count)];
+        NSNumber* randomIndex = indexArray[arc4random_uniform((int)indexArray.count-1)];
         
         int actualIndex = [randomIndex intValue];
         
@@ -276,12 +321,49 @@
         
         [self modifyRole:role];
         
-        // remove the index from index array so that the while loop can be ended
+        // rebuild index array so that the while loop can be ended
         [indexArray removeObject:randomIndex];
         
     }
     
-    return [_roles copy];
+    return _roles;
+    
+}
+
+-(void)reset{
+    
+    [_roles removeAllObjects];
+    
+    [_tasks removeAllObjects];
+    
+    numOfExtraTasksSomeoneHasToDo = 0;
+    
+    numOfTasksForEachRole = 0;
+    
+    _rolesCopy = nil;
+    
+    _tasksCopy = nil;
+    
+}
+
+-(void)reloadData{
+    //@weird: the rolescopy objects is still changing,
+    // below is just a quick fix
+    
+    // reset source
+    for (RoleObject* role in _roles) {
+        
+        [role reload];
+        
+    }
+    
+    _tasks = [_tasksCopy mutableCopy];
+    
+}
+
+-(int)generateLuckyPercentage{
+    
+    return arc4random_uniform(50);
     
 }
 
@@ -313,7 +395,9 @@
     
     // check if there are still tasks for this role that
     // needs to be assigned
-    NSInteger remainings = role.numOfTasksToDo;
+    //NSInteger remainings = role.numOfTasksToDo;
+    
+    NSInteger remainings = [[@(role.numOfTasksToDo) copy] integerValue];
     
     while (remainings > 0) {
         
@@ -328,7 +412,6 @@
         remainings --;
         
     }
-
     
 }
 

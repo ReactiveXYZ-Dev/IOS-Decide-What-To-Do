@@ -24,4 +24,8 @@
 
 -(CGFloat)getBoundWidth;
 
+-(CGFloat)getBoundOriginX;
+
+-(CGFloat)getBoundOriginY;
+
 @end

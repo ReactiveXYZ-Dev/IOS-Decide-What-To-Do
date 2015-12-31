@@ -10,6 +10,11 @@
 
 @interface DFMTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *taskLabel;
+@property (strong, nonatomic) UILabel *taskLabel;
+
+@property (assign, nonatomic) NSInteger selectedCount;
+
+-(void)setTaskLabelText:(NSString*)text;
+
 
 @end

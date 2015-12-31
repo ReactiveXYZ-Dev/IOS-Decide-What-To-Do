@@ -56,9 +56,21 @@
     
 }
 
+-(void)reset{
+    
+    [_activityList removeAllObjects];
+    
+}
+
 -(NSString*)decide{
     
     NSInteger length = _activityList.count;
+    
+    if (length == 0) {
+        
+        return @"";
+        
+    }
     
     NSInteger randomIndex = arc4random() % length;
     

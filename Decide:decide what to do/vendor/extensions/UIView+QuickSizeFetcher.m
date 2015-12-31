@@ -46,4 +46,16 @@
     
 }
 
+-(CGFloat)getBoundOriginX{
+    
+    return self.bounds.origin.x;
+    
+}
+
+-(CGFloat)getBoundOriginY{
+    
+    return self.bounds.origin.y;
+    
+}
+
 @end

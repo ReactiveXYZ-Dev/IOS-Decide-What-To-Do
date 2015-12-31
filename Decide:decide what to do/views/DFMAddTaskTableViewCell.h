@@ -10,7 +10,5 @@
 
 @interface DFMAddTaskTableViewCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet UIButton *addTaskButton;
-
 
 @end
