@@ -34,6 +34,6 @@
  * @return  self
  
  */
--(instancetype)initWithModel:(DCForGroupObject*)src;
+-(instancetype)initWithModel:(DCForGroupObject*)src andRole:(NSString*)roleName;
 
 @end

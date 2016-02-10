@@ -32,5 +32,31 @@
 
 +(void)removeObjectFromUserDefaultWithName:(NSString*)name;
 
++(void)showAlertWithTitle:(NSString*)title Message:(NSString*)message CancelButtonTitle:(NSString*)btnTitle;
+
++(void)showErrorAlert;
+
+// Options checking
++(BOOL)hasShownWalkthrough;
+
++(BOOL)localUserExists;
+
++(BOOL)userLoggedin;
+
++(BOOL)userHasPurchased;
+
++(void)removeUserCredentials;
+
++(void)incrementDecisionCount;
+
++(void)incrementSuccessWithCompletionHandler:(void (^)(BOOL))completion;
+
++(void)incrementFailureWithCompletionHandler:(void (^)(BOOL))completion;
+
++(void)incrementLikeWithCompletionHandler:(void (^)(BOOL))completion;
+
++(void)userDecisionCountsWithCompletionHandler:(void (^)(NSInteger))completion;
+
++(void)totalDecisionCountsWithCompletionHandler:(void (^)(NSInteger))completion;
 
 @end

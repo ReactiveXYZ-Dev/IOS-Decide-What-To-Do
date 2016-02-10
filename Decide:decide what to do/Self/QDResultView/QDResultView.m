@@ -136,6 +136,17 @@
     
 }
 
+-(void)reset{
+    
+    yesCount = 0;
+    
+    noCount = 0;
+    
+    [self reloadLabels];
+    
+    [self reloadPie];
+}
+
 #pragma mark - private methods
 -(void)updateLabel:(NSString*)type{
     
@@ -148,7 +159,7 @@
     
     transition.duration = 0.35f;
     
-    if ([type  isEqual: @"yes"]) {
+    if ([type isEqual: @"yes"]) {
         
         [_yesCountLabel.layer addAnimation:transition forKey:kCATransitionPush];
         
@@ -201,6 +212,20 @@
         }];
         
     }
+    
+}
+
+-(void)reloadLabels{
+    
+    [self updateLabel:@"yes"];
+    
+    [self updateLabel:@"no"];
+    
+}
+
+-(void)reloadPie{
+    
+    [self updatePie];
     
 }
 

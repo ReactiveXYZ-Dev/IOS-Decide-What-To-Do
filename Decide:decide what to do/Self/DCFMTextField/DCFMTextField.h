@@ -36,4 +36,7 @@
 // retrieve the data
 -(NSString*)retrieveInput;
 
+// check if the field is empty
+-(BOOL)isEmpty;
+
 @end

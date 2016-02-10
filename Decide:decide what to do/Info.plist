@@ -30,6 +30,22 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemIconFile</key>
+			<string>quick-decide</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>net.fistudio.decide-what-to-do.quickdecide</string>
+			<key>UIApplicationShortcutItemType</key>
+			<string>quick-decide</string>
+		</dict>
+	</array>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

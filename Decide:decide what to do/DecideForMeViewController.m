@@ -62,9 +62,13 @@
     // add tableview
     _taskListTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, [self.view getFrameWidth], [self.view getFrameHeight] / 2) style:UITableViewStylePlain];
     
+    _taskListTableView.contentInset = UIEdgeInsetsMake(50, 0, 50, 0);
+    
     _taskListTableView.delegate = self;
     
     _taskListTableView.dataSource = self;
+    
+    _taskListTableView.separatorStyle = UITableViewCellSeparatorStyleSingleLine;
     
     [_taskListTableView.layer setShadowColor:[[UIColor grayColor] CGColor]];
     [_taskListTableView.layer setShadowOffset:CGSizeMake(0, 0)];
@@ -90,10 +94,10 @@
     // add decideBtn
     _decideBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     
-    [_decideBtn.titleLabel setFont:[UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:30]];
+    [_decideBtn.titleLabel setFont:[UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:self.view.frame.size.width / 15]];
     _decideBtn.translatesAutoresizingMaskIntoConstraints = NO;
     
-    _decideBtn.layer.cornerRadius = 50;
+    _decideBtn.layer.cornerRadius = 15;
     
     _decideBtn.layer.borderWidth = 1.0f;
     
@@ -118,7 +122,7 @@
     
     NSDictionary* buttonViews = NSDictionaryOfVariableBindings(_taskListTableView,_decideBtn,_resetBtn);
     
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_taskListTableView]-(50)-[_decideBtn]-(40)-[_resetBtn]-(64)-|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:buttonViews]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[_taskListTableView]-(50)-[_decideBtn(==80)]-(40)-[_resetBtn]-(64)-|" options:NSLayoutFormatAlignAllCenterX metrics:nil views:buttonViews]];
     
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-(60)-[_decideBtn]-(60)-|" options:0 metrics:nil views:buttonViews]];
     

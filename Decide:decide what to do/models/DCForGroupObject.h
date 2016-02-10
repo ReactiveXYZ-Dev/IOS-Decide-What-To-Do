@@ -101,6 +101,18 @@ typedef NS_ENUM(NSInteger,RatioCheckedResult) {
 
 /**
  
+ * @brief   Find a role with a name
+ 
+ * @param   NSString name
+ 
+ * @return  RoleObject: role
+ 
+ */
+-(RoleObject*)findRoleWithName:(NSString*)name;
+
+
+/**
+ 
  * @brief   Check if a role has already owned some privileges
  
  * @param   NSString roleName

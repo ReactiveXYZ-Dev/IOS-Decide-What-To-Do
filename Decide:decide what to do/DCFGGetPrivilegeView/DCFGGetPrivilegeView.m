@@ -27,7 +27,9 @@
     // data
     NSString* tmpTask;
     int extraChance;
-
+    
+    // role specific data
+    NSArray* filteredTasks;
     
 }
 @property(strong,nonatomic)UIView* chooseTaskView;
@@ -43,13 +45,12 @@
     
 }
 
--(instancetype)initWithModel:(DCForGroupObject*)src{
+-(instancetype)initWithModel:(DCForGroupObject*)src andRole:(NSString *)roleName{
     
     if (self = [super init]) {
         
+        // init views
         self.translatesAutoresizingMaskIntoConstraints = NO;
-        
-        model = src;
         
         _chooseTaskView = [[UIView alloc]init];
         
@@ -58,6 +59,29 @@
         _getPrivilegePercentageView = [[UIView alloc]init];
         
         _getPrivilegePercentageView.translatesAutoresizingMaskIntoConstraints = NO;
+        
+        // init model data
+        model = src;
+        
+        RoleObject* selectedRole = [model findRoleWithName:roleName];
+        
+        NSMutableArray* newArray = [NSMutableArray arrayWithArray:model.tasks];
+        
+        NSLog(@"%@",model.tasks);
+        
+        for (NSString* task in model.tasks) {
+            
+            if ([[selectedRole retrieveTasksWithExtraChance] containsObject:task]) {
+                
+                [newArray removeObject:task];
+                
+            }
+            
+        }
+        
+        filteredTasks = [NSArray arrayWithArray:newArray];
+        
+        NSLog(@"FT: %@",filteredTasks);
         
         [self loadChooseTaskView];
         
@@ -91,7 +115,7 @@
     
     picker.delegate = self;
     
-    [picker selectRow:model.tasks.count/2 inComponent:0 animated:YES];
+    [picker selectRow:filteredTasks.count/2 inComponent:0 animated:YES];
     
     [_chooseTaskView addSubview:picker];
     
@@ -306,25 +330,37 @@
 
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     
-    return model.tasks.count;
+    if (filteredTasks.count == 0) {
+        
+        return 1;
+        
+    }
+    
+    return filteredTasks.count;
     
 }
 
 -(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     
-    return [model.tasks objectAtIndex:row];
+    if (filteredTasks.count == 1) {
+        
+        return @"Hey! what more you want?";
+        
+    }
+    
+    return [filteredTasks objectAtIndex:row];
     
 }
 
 -(void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     
-    tmpTask = [model.tasks objectAtIndex:row];
+    tmpTask = [filteredTasks objectAtIndex:row];
     
 }
 
 -(void)saveSelectedTask{
     
-    tmpTask = [model.tasks objectAtIndex:[picker selectedRowInComponent:0]];
+    tmpTask = [filteredTasks objectAtIndex:[picker selectedRowInComponent:0]];
     
 }
 
@@ -370,7 +406,7 @@
             [self saveSelectedTask];
             
             // start transition
-            [self transitionToGetPrivilegePercentageViewWithTaskNamed:[model.tasks objectAtIndex:[picker selectedRowInComponent:0]]];
+            [self transitionToGetPrivilegePercentageViewWithTaskNamed:[filteredTasks objectAtIndex:[picker selectedRowInComponent:0]]];
             
         }
         

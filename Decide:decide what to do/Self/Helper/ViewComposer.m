@@ -24,6 +24,8 @@
 
 #import "DCFGResultView.h"
 
+#import "IntroRegistrationView.h"
+
 @interface ViewComposer()<DCFMTextFieldDelegate>{
     
     NSString* currentEditingText;
@@ -379,7 +381,7 @@
     contentView.layer.cornerRadius = 12.0f;
     
     // load the custom view
-    DCFGGetPrivilegeView* innerView = [[DCFGGetPrivilegeView alloc]initWithModel:model];
+    DCFGGetPrivilegeView* innerView = [[DCFGGetPrivilegeView alloc]initWithModel:model andRole:name];
     
     innerView.roleName = name;
 
@@ -449,9 +451,31 @@
     [separatorView.layer setMask:gradient];
     
     return separatorView;
+}
+
+-(EAIntroView*)appTutorialViews{
+    
+    EAIntroPage *page1 = [EAIntroPage page];
+    page1.bgImage = [UIImage imageNamed:@"decide_what_to_do_intro_pg1"];
+    
+    EAIntroPage *page2 = [EAIntroPage page];
+    page2.bgImage = [UIImage imageNamed:@"decide_what_to_do_intro_pg2"];
+    
+    EAIntroPage *page3 = [EAIntroPage page];
+    page3.bgImage = [UIImage imageNamed:@"decide_what_to_do_intro_pg3"];
+    
+    //@todo: another custom view with the signing in button
+    EAIntroPage *page4 = [EAIntroPage pageWithCustomView:[[IntroRegistrationView alloc]init]];
+    
+    EAIntroView* tutView = [[EAIntroView alloc]initWithFrame:[[[UIApplication sharedApplication]delegate]window].frame andPages:@[page1,page2,page3,page4]];
+    
+    [tutView setPageControl:nil];
+    
+    return tutView;
     
 }
-#pragma mark - delegate methods from text fields
+
+#pragma mark - delegates
 // @caution: this will only allow one textfield editing
 // at one time, if more, delegate will receive multiple
 // inputs

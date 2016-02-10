@@ -10,8 +10,11 @@
 
 #import "DCForMeObject.h"
 
-@implementation Helper
+#import "DCUserDefaultKeyConstants.h"
 
+#import "APICommunicator.h"
+
+@implementation Helper
 
 +(NSString*)stringWithInteger:(NSInteger)integer{
     
@@ -86,6 +89,236 @@
     
 }
 
++(void)incrementDecisionCount{
+    
+    // check if user exist
+    if ([self localUserExists] && ([[APICommunicator sharedCommunicator]reachability_status] == API_REACHABLE)) {
+        
+        // increment for each user
+        [[APICommunicator sharedCommunicator]sendRemoteUserRequest:USER_INCREMENT_DECISION_COUNT CompletionHandler:^(NSDictionary* result){
+            
+            NSLog(@"%@",result);
+            
+        }];
+        
+    }
+    
+    
+    
+    // increment global counter
+    [[APICommunicator sharedCommunicator]sendRemoteCounterRequest:COUNTER_ADD_TOTAL_COUNT CompletionHanlder:^(NSDictionary* result){
+       
+        NSLog(@"%@",result);
+        
+    }];
+    
+}
 
+
++(void)incrementSuccessWithCompletionHandler:(void (^)(BOOL))completion{
+    
+    __block BOOL toBeReturned;
+    
+    [[APICommunicator sharedCommunicator]sendRemoteCounterRequest:COUNTER_ADD_SUCCESS_COUNT CompletionHanlder:^(NSDictionary* result){
+        
+        if ([result[@"status"] isEqualToString:@"success"]) {
+            
+            toBeReturned = YES;
+            
+        }else{
+            
+            toBeReturned = NO;
+        }
+        
+        if (completion) {
+            
+            completion(toBeReturned);
+            
+        }
+        
+    }];
+
+    
+}
+
+
++(void)incrementFailureWithCompletionHandler:(void (^)(BOOL))completion{
+    
+    __block BOOL toBeReturned;
+    
+    [[APICommunicator sharedCommunicator]sendRemoteCounterRequest:COUNTER_ADD_FAILURE_COUNT CompletionHanlder:^(NSDictionary* result){
+                
+        if ([result[@"status"] isEqualToString:@"success"]) {
+            
+            toBeReturned = YES;
+            
+        }else{
+            
+            toBeReturned = NO;
+        }
+        
+        if (completion) {
+            
+            completion(toBeReturned);
+            
+        }
+        
+    }];
+    
+    
+}
+
++(void)incrementLikeWithCompletionHandler:(void (^)(BOOL))completion{
+    
+    __block BOOL toBeReturned;
+    
+    [[APICommunicator sharedCommunicator]sendRemoteCounterRequest:COUNTER_ADD_LIKES CompletionHanlder:^(NSDictionary* result){
+        
+        if ([result[@"status"] isEqualToString:@"success"]) {
+            
+            toBeReturned = YES;
+            
+        }else{
+            
+            toBeReturned = NO;
+        }
+        
+        if (completion) {
+            
+            completion(toBeReturned);
+            
+        }
+        
+    }];
+    
+}
+
++(BOOL)hasShownWalkthrough{
+    
+    if ([self getObjectFromUserDefaultWithName:kWALKTHROUGH_HAS_BEEN_DISPLAYED_KEY] && [[self getObjectFromUserDefaultWithName:kWALKTHROUGH_HAS_BEEN_DISPLAYED_KEY] isEqualToString:@"yes"]) {
+        
+        return YES;
+        
+    }
+    
+    return NO;
+    
+}
+
++(BOOL)localUserExists{
+    
+    if ([Helper getObjectFromUserDefaultWithName:kUSER_NAME_KEY] && [Helper getObjectFromUserDefaultWithName:kUSER_EMAIL_KEY]) {
+     
+        return YES;
+    }
+    
+    return NO;
+}
+
++(BOOL)userLoggedin{
+    
+    if ([[Helper getObjectFromUserDefaultWithName:kUSER_IS_LOGGED_IN_KEY] isEqual:@"yes"]) {
+        
+        return YES;
+        
+    }
+    
+    return NO;
+    
+}
+
++(BOOL)userHasPurchased{
+    
+    if ([[Helper getObjectFromUserDefaultWithName:kUSER_HAS_PURCHASED_ADDON] isEqualToNumber:@(YES)]) {
+                
+        return YES;
+        
+    }
+    
+    return NO;
+    
+}
+
++(void)removeUserCredentials{
+    
+    [self removeObjectFromUserDefaultWithName:kUSER_NAME_KEY];
+    
+    [self removeObjectFromUserDefaultWithName:kUSER_EMAIL_KEY];
+    
+}
+
++(void)totalDecisionCountsWithCompletionHandler:(void (^)(NSInteger))completion{
+    
+    [[APICommunicator sharedCommunicator]sendRemoteCounterRequest:COUNTER_FETCH_TOTAL_COUNTS CompletionHanlder:^(NSDictionary* result){
+        
+        NSNumber* toBeReturned;
+        
+        if ([result[@"status"] isEqualToString:@"success"]) {
+            
+            toBeReturned = (NSNumber*)result[@"message"];
+            
+        }else{
+            
+            toBeReturned = nil;
+        }
+        
+        if (toBeReturned) {
+            
+            if (completion) {
+                
+                completion([toBeReturned integerValue]);
+                
+            }
+            
+        }
+        
+    }];
+    
+}
+
++(void)userDecisionCountsWithCompletionHandler:(void (^)(NSInteger))completion{
+    
+    if ([self localUserExists] && ([[APICommunicator sharedCommunicator]reachability_status] == API_REACHABLE)) {
+        
+        [[APICommunicator sharedCommunicator]sendRemoteUserRequest:USER_GET_DECISION_COUNT CompletionHandler:^(NSDictionary* result){
+            
+            NSNumber* toBeReturned;
+            
+            if ([result[@"status"] isEqualToString:@"success"]) {
+                
+                toBeReturned = (NSNumber*)result[@"message"];
+                
+            }else{
+                
+                toBeReturned = nil;
+            }
+            
+            if (toBeReturned) {
+                
+                if (completion) {
+                    
+                    completion([toBeReturned integerValue]);
+                    
+                }
+                
+            }
+            
+        }];
+        
+    }
+    
+}
+
++(void)showAlertWithTitle:(NSString *)title Message:(NSString *)message CancelButtonTitle:(NSString *)btnTitle{
+    
+    [[[UIAlertView alloc]initWithTitle:title message:message delegate:nil cancelButtonTitle:btnTitle otherButtonTitles:nil, nil] show];
+    
+}
+
++(void)showErrorAlert{
+    
+    [self showAlertWithTitle:@"Error" Message:@"Sorry. Something just went wrong" CancelButtonTitle:@"Try again later"];
+    
+}
 
 @end

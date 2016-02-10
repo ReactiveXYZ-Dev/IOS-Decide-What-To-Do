@@ -30,9 +30,7 @@
 
 #import "KLCPopup.h"
 
-#import "M13ProgressHUD.h"
-
-#import "M13ProgressViewRing.h"
+#import "MBProgressHUD.h"
 static char kBtnReceiverKey;
 
 
@@ -114,10 +112,10 @@ static char kBtnReceiverKey;
     // Add decide and reset btn
     _decideBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     
-    [_decideBtn.titleLabel setFont:[UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:30]];
+    [_decideBtn.titleLabel setFont:[UIFont fontWithName:@"AppleSDGothicNeo-SemiBold" size:self.view.frame.size.width / 15]];
     _decideBtn.translatesAutoresizingMaskIntoConstraints = NO;
     
-    _decideBtn.layer.cornerRadius = 50;
+    _decideBtn.layer.cornerRadius = 15;
     
     _decideBtn.layer.borderWidth = 1.0f;
     
@@ -488,43 +486,36 @@ static char kBtnReceiverKey;
         
     }else{
         
-        // @todo: present a grand popup with the result
         // add a fake processing HUD to illustrating the sense of invocation.
+        MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:[[[UIApplication sharedApplication]delegate]window] animated:YES];
         
-        M13ProgressHUD* fakeHUD = [[M13ProgressHUD alloc]initWithProgressView:[[M13ProgressViewRing alloc]init]];
+        // Set the determinate mode to show task progress.
+        hud.mode = MBProgressHUDModeDeterminate;
         
-        fakeHUD.status = @"Intense Calculation...";
-        
-        fakeHUD.progressViewSize = CGSizeMake(60.0, 60.0);
-        
-        __weak M13ProgressHUD* weakFakeHUD = fakeHUD;
+        hud.label.text = NSLocalizedString(@"Calculating...", @"HUD loading title");
         
         __weak DecideForGroupViewController* weakSelf = self;
-        
-        [fakeHUD setCompletionBlock:^{
-            
-            [weakFakeHUD hide:YES];
-            
-            // load the view
-            [weakSelf showDecisionResultPopup];
-            
-        }];
-        
-        fakeHUD.animationPoint = CGPointMake([UIScreen mainScreen].bounds.size.width / 2, [UIScreen mainScreen].bounds.size.height / 2);
-        
-        [self.view addSubview:fakeHUD];
-        
-        [fakeHUD show:YES];
         
         for (int i = 1; i < 5; i ++) {
             
             dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.65 * i * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                 
-                [fakeHUD setProgress:0.25 * i animated:YES];
+                [hud setProgress:hud.progress + 0.25];
+                
+                if (i == 4) {
+                    
+                    [hud hideAnimated:YES];
+                    
+                    [weakSelf showDecisionResultPopup];
+                    
+                }
                 
             });
             
         }
+
+
+        
         
         
     }
@@ -683,7 +674,15 @@ static char kBtnReceiverKey;
     
     if ([model isAlreadyVIPForRoleWithName:roleName]) {
         
-        [[[UIAlertView alloc]initWithTitle:@"Hey" message:@"Sorry, you are already the lucky one!" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:@"Upgrade assets", nil] show];
+        if (![Helper userHasPurchased]) {
+            
+            [[[UIAlertView alloc]initWithTitle:@"Hey" message:@"Sorry, you are already the lucky one!" delegate:self cancelButtonTitle:@"Okay" otherButtonTitles:@"Upgrade assets", nil] show];
+            
+        }else{
+            
+            [self presentAddPrivilegePopupWithParticipantName:roleName];
+            
+        }
         
     }else{
         
@@ -709,6 +708,7 @@ static char kBtnReceiverKey;
     
     // assign to role
     [model assignExtraChance:extraChance OfDoingTaskNamed:task_name ToRoleWithName:role_name];
+    
     
     // dismiss the view
     [self viewComposerBtnPressed:(id)privilegeData[@"sender"]];

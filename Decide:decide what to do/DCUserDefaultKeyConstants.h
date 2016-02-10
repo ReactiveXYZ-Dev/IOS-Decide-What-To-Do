@@ -10,6 +10,8 @@
 // notification keys
 static NSString* const DEFAULT_USERNAME_KEY = @"user_name";
 
+static NSString* const kQD_3D_TOUCH_RECEIVER_KEY = @"kqd3dtouchreceiverkey";
+
 static NSString* const kDFM_ADD_NEW_TASK_NOTIFICATION_KEY = @"dfmaddnewtasknotfication";
 
 static NSString* const kDFG_PRESENT_ADD_PRIVILEGE_POPUP_NOTIFICATION_KEY = @"kdfgpresentaddprivilegepopupnotificationkey";
@@ -23,3 +25,17 @@ static char kTextFieldAssociationKey;
 
 // user default keys
 static NSString* const kIS_NOTIFICATION_DISABLED_USER_DEFAULT_KEY = @"kisnotificationdisableduserdefaultkey";
+
+static NSString* const kUSER_NAME_KEY = @"kusernamekey";
+
+static NSString* const kUSER_EMAIL_KEY = @"kuseremailkey";
+
+static NSString* const kUSER_COUNT_KEY = @"kusercountkey";
+
+static NSString* const kUSER_IS_LOGGED_IN_KEY = @"kuserisloggedinkey";
+
+static NSString* const kWALKTHROUGH_HAS_BEEN_DISPLAYED_KEY = @"kwalkthroughhasbeendisplayedkey";
+
+static NSString* const kUSER_HAS_PURCHASED_ADDON = @"kuserhaspurchasedaddon";
+// other keys
+static NSString* const kSERVICE_EMAIL = @"service@fistudio.net";

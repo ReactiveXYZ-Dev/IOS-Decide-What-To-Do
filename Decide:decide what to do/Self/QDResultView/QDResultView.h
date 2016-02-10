@@ -14,4 +14,6 @@
 
 -(void)incrementNoCount;
 
+-(void)reset;
+
 @end

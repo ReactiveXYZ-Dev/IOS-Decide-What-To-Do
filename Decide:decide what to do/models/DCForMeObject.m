@@ -8,6 +8,8 @@
 
 #import "DCForMeObject.h"
 
+#import "Helper.h"
+
 @interface DCForMeObject (){
     
     
@@ -63,6 +65,8 @@
 }
 
 -(NSString*)decide{
+    
+    [Helper incrementDecisionCount];
     
     NSInteger length = _activityList.count;
     

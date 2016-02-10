@@ -12,7 +12,17 @@
 
 #import "CarbonKit.h"
 
-@interface RootViewController ()<CarbonTabSwipeNavigationDelegate>{
+#import "UIColor+Bohr.h"
+
+#import "Helper.h"
+
+#import "APICommunicator.h"
+
+#import "ViewComposer.h"
+
+#import "DCUserDefaultKeyConstants.h"
+
+@interface RootViewController ()<CarbonTabSwipeNavigationDelegate,UIAlertViewDelegate>{
     
     NSArray* barItems;
     
@@ -21,15 +31,22 @@
 
 @property (weak, nonatomic) IBOutlet UIToolbar *swipeBar;
 
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *likeBtn;
+
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *settingsBtn;
+
+
 @end
 
 @implementation RootViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    // init carbonkit components
+    // init view controller components
     barItems = @[
                  [UIImage imageNamed:@"quick_decide.png"],
                  [UIImage imageNamed:@"decide_for_me.png"],
@@ -45,13 +62,35 @@
     
     [self setUp];
     
+    // load the tutorial view
+    if (![Helper hasShownWalkthrough]) {
+        
+       [[[ViewComposer sharedComposer]appTutorialViews]showInView:self.navigationController.view animateDuration:0.65];
+        
+        [Helper setUserDefault:kWALKTHROUGH_HAS_BEEN_DISPLAYED_KEY WithObject:@"yes"];
+        
+    }
+    
 }
 
 -(void)setUp{
     
+    BOOL hasLiked = [Helper getObjectFromUserDefaultWithName:@"liked"];
+    
+    if (hasLiked) {
+        
+        _likeBtn.image = [UIImage imageNamed:@"like_filled"];
+        
+    }else{
+        
+        _likeBtn.image = [UIImage imageNamed:@"like_unfilled"];
+        
+    }
+    
+    
     self.title = @"Quick Decide";
     
-    UIColor *color = [UIColor colorWithRed:24.0/255 green:75.0/255 blue:152.0/255 alpha:1];
+    UIColor *color = [UIColor bo_blueColor];
     self.navigationController.navigationBar.translucent = NO;
     self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
     self.navigationController.navigationBar.barTintColor = color;
@@ -72,7 +111,9 @@
 
 }
 
-#pragma mark - Nav Delegate
+
+
+#pragma mark - Carbon Delegate
 
 // required
 - (nonnull UIViewController *)carbonTabSwipeNavigation:(nonnull CarbonTabSwipeNavigation *)carbontTabSwipeNavigation
@@ -127,6 +168,87 @@
     return UIBarPositionTop;
 }
 
+#pragma mark - Actions
+
+- (IBAction)tiggerLike:(id)sender {
+    
+    BOOL hasLiked = [[Helper getObjectFromUserDefaultWithName:@"liked"] boolValue];
+    
+    if (!hasLiked) {
+        
+        [Helper incrementLikeWithCompletionHandler:^(BOOL result){
+           
+            if (result) {
+                
+                // change the image
+                _likeBtn.image = [UIImage imageNamed:@"like_filled"];
+                
+                // set settings
+                [Helper setUserDefault:@"liked" WithObject:@(YES)];
+                
+            }
+            
+        }];
+        
+    }else{
+        
+        [self showLikeCount];
+        
+    }
+    
+}
+
+- (void)showLikeCount {
+    
+    [[APICommunicator sharedCommunicator]sendRemoteCounterRequest:COUNTER_FETCH_LIKE_COUNTS CompletionHanlder:^(NSDictionary* result){
+        
+        NSString* message = result[@"message"];
+        
+        if (message) {
+            
+            UIAlertView* likeCountAlert = [[UIAlertView alloc]initWithTitle:@"The crowd" message:[NSString stringWithFormat:@"The app now has %@ likes. Join the crowd!",message] delegate:self cancelButtonTitle:@"Wow!" otherButtonTitles:@"Like again!", nil];
+            
+            likeCountAlert.tag = 0;
+            
+            [likeCountAlert show];
+            
+        }else{
+            
+            [Helper showErrorAlert];
+            
+        }
+
+    }];
+    
+    
+}
+
+#pragma mark - UIAlertView delegate
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    if (alertView.tag == 0) {
+        
+        if (buttonIndex == 1) {
+            
+            [Helper incrementLikeWithCompletionHandler:^(BOOL result){
+                
+                if (result) {
+                    
+                    [Helper showAlertWithTitle:@"Thank you!" Message:@"Your support is a great pleasure for us!" CancelButtonTitle:@"cool"];
+                    
+                }else{
+                    
+                    [Helper showErrorAlert];
+                    
+                }
+                
+            }];
+            
+        }
+        
+    }
+    
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

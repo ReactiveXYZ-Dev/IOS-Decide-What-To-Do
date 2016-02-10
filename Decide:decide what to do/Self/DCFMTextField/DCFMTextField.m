@@ -245,4 +245,10 @@
     
 }
 
+-(BOOL)isEmpty{
+    
+    return [_mainTextField.text isEqualToString:@""] ? YES:NO;
+    
+}
+
 @end

@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#import "EAIntroView.h"
+
 typedef NS_ENUM(NSInteger){
     
     POPUP_ADD_NEW_ROLE = 0,
@@ -24,7 +26,7 @@ typedef NS_ENUM(NSInteger){
 
 @class RoleObject;
 
-@interface ViewComposer : NSObject
+@interface ViewComposer : NSObject <EAIntroDelegate>
 
 /**
  
@@ -136,6 +138,14 @@ typedef NS_ENUM(NSInteger){
  */
 -(UIView*)composeSeparatorViewWithFrame:(CGRect)frame BgColor:(UIColor*)color ColorTransition:(NSArray*)transitions Config:(NSDictionary*)configs;
 
+/**
+ 
+ * @brief   Generate an EAIntroView instance for the app's tutorial page
+ 
+ * @return  EAIntroView
+ 
+ */
+-(EAIntroView*)appTutorialViews;
 
 // Data from views
 

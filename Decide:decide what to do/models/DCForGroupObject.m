@@ -8,6 +8,8 @@
 
 #import "DCForGroupObject.h"
 
+#import "Helper.h"
+
 @interface DCForGroupObject(){
     
     long numOfTasksForEachRole;
@@ -283,6 +285,9 @@
 }
 
 -(NSArray<RoleObject*>*)decideWithSetPriority{
+    
+    [Helper incrementDecisionCount];
+    
     // reassign number of tasks
     [self autoAssignTasksToEachRole];
     
@@ -297,6 +302,9 @@
 }
 
 -(NSArray<RoleObject*> *)decideWithRandomPriority{
+    
+    [Helper incrementDecisionCount];
+    
     // reassign number of tasks
     [self autoAssignTasksToEachRole];
     

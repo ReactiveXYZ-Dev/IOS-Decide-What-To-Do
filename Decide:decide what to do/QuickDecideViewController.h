@@ -11,6 +11,5 @@
 @interface QuickDecideViewController : UIViewController
 
 
-
 @end
 

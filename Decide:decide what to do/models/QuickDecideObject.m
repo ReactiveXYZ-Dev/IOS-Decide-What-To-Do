@@ -7,7 +7,10 @@
 //
 
 #import "QuickDecideObject.h"
+
 #import "NSNumber+RoundingUp.h"
+
+#import "Helper.h"
 
 @implementation QuickDecideObject
 
@@ -29,6 +32,8 @@
 #pragma mark - Main methods
 -(BOOL)decide{
     
+    [Helper incrementDecisionCount];
+    
     int chance = arc4random_uniform(100);
     
     if (chance < 50) {
@@ -36,12 +41,16 @@
         // No
         [self incrementSuccessCount];
         
+        [Helper incrementSuccessWithCompletionHandler:nil];
+        
         return NO;
         
     }else{
         
         // Yes
         [self incrementFailureCount];
+        
+        [Helper incrementFailureWithCompletionHandler:nil];
         
         return YES;
         
@@ -73,7 +82,9 @@
 
 -(void)reset{
     
+    _successCount = 0;
     
+    _failureCount = 0;
 }
 
 

@@ -37,6 +37,15 @@
  */
 -(float)getSuccessPercentage;
 
-
+/**
+ 
+ * @brief   Reset the database
+ 
+ * @param   nil
+ 
+ * @return  void
+ 
+ */
+-(void)reset;
 
 @end

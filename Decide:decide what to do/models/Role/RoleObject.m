@@ -43,7 +43,7 @@
 -(void)assignExtraChance:(NSInteger)percentage OfDoingTaskNamed:(NSString *)taskname{
     
     chanceMap[taskname] = [NSNumber numberWithInteger:percentage];
-    
+        
 }
 
 -(NSInteger)retrieveChanceOfDoingTaskName:(NSString *)taskname{
@@ -65,7 +65,7 @@
 }
 
 -(NSArray*)retrieveAssignedTasks{
-        
+    
     return [NSArray arrayWithArray:assignedTasks];
     
 }

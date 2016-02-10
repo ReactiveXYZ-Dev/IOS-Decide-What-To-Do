@@ -21,6 +21,8 @@
 
 #import "Helper.h"
 
+#import "DCUserDefaultKeyConstants.h"
+
 #import "KLCPopup.h"
 
 #import "ViewComposer.h"
@@ -38,6 +40,8 @@
 
 @property (strong,nonatomic) UIButton* decideBtn;
 
+@property (strong,nonatomic) UIButton* resetBtn;
+
 @property (strong,nonatomic) QDResultView* resultView;
 
 @end
@@ -52,6 +56,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    // add observer to respond to the 3D touch quick decide short cut
+    [[NSNotificationCenter defaultCenter]addObserver:self selector:@selector(decideBtnPressed:) name:kQD_3D_TOUCH_RECEIVER_KEY object:nil];
     
     // load watch connectivity
     if ([WCSession isSupported]) {
@@ -79,7 +86,7 @@
     
     float designatedSideLength = [self.view getFrameWidth] / 2;
     
-    _decideBtn.frame = CGRectMake([self.view getFrameWidth] / 2 - designatedSideLength / 2, [self.view getFrameHeight] / 5, designatedSideLength, designatedSideLength);
+    _decideBtn.frame = CGRectMake([self.view getFrameWidth] / 2 - designatedSideLength / 2, [self.view getFrameHeight] / 5 - 30, designatedSideLength, designatedSideLength);
     
     _decideBtn.layer.cornerRadius = [_decideBtn getBoundWidth] / 2;
     
@@ -91,9 +98,20 @@
     
     [_decideBtn setTitle:@"Decide Now!" forState:UIControlStateNormal];
     
-    [_decideBtn.titleLabel setFont:[UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:28]];
+    [_decideBtn.titleLabel setFont:[UIFont fontWithName:@"AppleSDGothicNeo-Bold" size:_decideBtn.frame.size.width / 10]];
     
     [_container addSubview:_decideBtn];
+    
+    // add reset button
+    _resetBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    
+    _resetBtn.frame = CGRectMake(0, [_decideBtn getFrameOriginY] + designatedSideLength + 30, [self.view getFrameWidth], 30);
+    
+    [_resetBtn setTitle:@"Reset" forState:UIControlStateNormal];
+    
+    [_resetBtn addTarget:self action:@selector(resetBtnPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [_container addSubview:_resetBtn];
     
     // add QDResult view
     _resultView = [[QDResultView alloc]initWithFrame:CGRectMake(0, [self.view getFrameHeight] - [self.view getBoundHeight] / 2.5, [self.view getFrameWidth], [self.view getFrameWidth])];
@@ -148,6 +166,16 @@
     [popup show];
 }
 
+-(void)resetBtnPressed:(id)sender{
+    
+    // reset the model
+    [qdModel reset];
+    
+    // reload the pie
+    [_resultView reset];
+    
+}
+
 #pragma mark - WatchConnectivity Delegate
 -(void)session:(WCSession *)session didReceiveMessage:(NSDictionary<NSString *,id> *)message replyHandler:(nonnull void (^)(NSDictionary<NSString *,id> * _Nonnull))replyHandler{
     
@@ -163,8 +191,14 @@
         
         replyHandler(@{@"response":resultString});
         
-        
     }
+    
+}
+
+#pragma mark - Public methods
+-(void)dealloc{
+    
+    [[NSNotificationCenter defaultCenter]removeObserver:self];
     
 }
 
