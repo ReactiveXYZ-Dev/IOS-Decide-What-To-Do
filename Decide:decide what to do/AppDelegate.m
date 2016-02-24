@@ -30,7 +30,7 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    
+    [Helper setUserDefault:kUSER_HAS_PURCHASED_ADDON WithObject:@(YES)];
     // check API reachability
     [[APICommunicator sharedCommunicator] setReachability_status:API_UNKNOWN];
     

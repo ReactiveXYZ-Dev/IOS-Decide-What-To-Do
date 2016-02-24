@@ -15,6 +15,8 @@
 
 #import "APICommunicator.h"
 
+#import "StoreCommunicator.h"
+
 #import "Helper.h"
 
 #import "ViewComposer.h"
@@ -159,9 +161,26 @@
     [self addSection:[BOTableViewSection sectionWithHeaderTitle:@"Support us" handler:^(BOTableViewSection *section) {
         
         // upgrade (in app purchase) button
-        [section addCell:[BOButtonTableViewCell cellWithTitle:@"Buy us a cup of coffee $0.99" key:nil handler:^(BOButtonTableViewCell* sender){
+        NSString* cellTitle = [Helper userHasPurchased]?@"Buy us a cup of coffee US$0.99":@"Thank you for your support";
+        
+        [section addCell:[BOButtonTableViewCell cellWithTitle:cellTitle key:nil handler:^(BOButtonTableViewCell* sender){
             
-            //...
+            [[StoreCommunicator sharedCommunicator]buyUpgradeWithSuccessHandler:^(SKPaymentTransaction* transaction){
+                
+                // show success
+                [Helper showAlertWithTitle:@"Thank you!" Message:@"You have successfully purchased our upgrade package. Now enjoy the benefits" CancelButtonTitle:@"Great!"];
+                
+                // set user default to be true
+                [Helper setUserDefault:kUSER_HAS_PURCHASED_ADDON WithObject:@(YES)];
+                
+                
+            }andFailureHandler:^(NSError* error){
+                
+                // show failure
+                [Helper showAlertWithTitle:@"Sorry. Something went wrong" Message:@"Your purchase was not successful, please try later!" CancelButtonTitle:@"Okay"];
+                
+                
+            }];
             
         }]];
         
@@ -329,7 +348,7 @@
     
     NSLog(@"Registering??");
     
-    if (![Helper localUserExists]) {
+    if ([Helper localUserExists] == NO) {
         
         // try registering the user
         [[APICommunicator sharedCommunicator]sendRemoteUserRequest:USER_REGISTER CompletionHandler:^(NSDictionary* result){

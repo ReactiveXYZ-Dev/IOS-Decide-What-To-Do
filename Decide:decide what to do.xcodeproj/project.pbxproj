@@ -45,6 +45,9 @@
 		8C4ACEAD1C34DF2400BBB86D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4ACEAC1C34DF2400BBB86D /* RootViewController.m */; };
 		8C4FCB781C63A90A00CEB63A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C4FCB771C63A90A00CEB63A /* Reachability.m */; };
 		8C5DE34A1C2EBA9C00ABB403 /* vip.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C5DE3491C2EBA9C00ABB403 /* vip.png */; };
+		8C5ED8001C6DF06000F68E51 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C5ED7FF1C6DF06000F68E51 /* StoreKit.framework */; };
+		8C5ED8041C6DF2C300F68E51 /* RMStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5ED8031C6DF2C300F68E51 /* RMStore.m */; };
+		8C5ED8721C6DFA5300F68E51 /* StoreCommunicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C5ED8711C6DFA5300F68E51 /* StoreCommunicator.m */; };
 		8C66A4651C291AA8007FBFA3 /* add_privilege_btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C66A4641C291AA8007FBFA3 /* add_privilege_btn.png */; };
 		8C66A4681C296A02007FBFA3 /* ViewComposer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C66A4671C296A02007FBFA3 /* ViewComposer.m */; };
 		8C6A3EC41C68DC6000E218B4 /* EAIntroPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C6A3EC11C68DC6000E218B4 /* EAIntroPage.m */; };
@@ -58,7 +61,6 @@
 		8C7159CF1C2FC976005B5715 /* DCFGGetPrivilegeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8C7159CE1C2FC976005B5715 /* DCFGGetPrivilegeView.m */; };
 		8CA4B92D1C24538E00D3CCEC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA4B92C1C24538E00D3CCEC /* CFNetwork.framework */; };
 		8CA4B92F1C2453A200D3CCEC /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA4B92E1C2453A200D3CCEC /* libz.tbd */; };
-		8CA4B9351C24540600D3CCEC /* libReveal.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 8CA4B9341C24540600D3CCEC /* libReveal.dylib */; };
 		8CA4B9371C24541500D3CCEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CA4B9361C24541500D3CCEC /* CoreGraphics.framework */; };
 		8CA4B9401C25996800D3CCEC /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CA4B93E1C25996800D3CCEC /* Interface.storyboard */; };
 		8CA4B9421C25996800D3CCEC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8CA4B9411C25996800D3CCEC /* Assets.xcassets */; };
@@ -249,6 +251,11 @@
 		8C4FCB761C63A90A00CEB63A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		8C4FCB771C63A90A00CEB63A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		8C5DE3491C2EBA9C00ABB403 /* vip.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vip.png; sourceTree = "<group>"; };
+		8C5ED7FF1C6DF06000F68E51 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		8C5ED8021C6DF2C300F68E51 /* RMStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMStore.h; sourceTree = "<group>"; };
+		8C5ED8031C6DF2C300F68E51 /* RMStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMStore.m; sourceTree = "<group>"; };
+		8C5ED8701C6DFA5300F68E51 /* StoreCommunicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoreCommunicator.h; path = "Store Communicator/StoreCommunicator.h"; sourceTree = "<group>"; };
+		8C5ED8711C6DFA5300F68E51 /* StoreCommunicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoreCommunicator.m; path = "Store Communicator/StoreCommunicator.m"; sourceTree = "<group>"; };
 		8C66A4641C291AA8007FBFA3 /* add_privilege_btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add_privilege_btn.png; sourceTree = "<group>"; };
 		8C66A4661C296A02007FBFA3 /* ViewComposer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ViewComposer.h; path = Self/Helper/ViewComposer.h; sourceTree = "<group>"; };
 		8C66A4671C296A02007FBFA3 /* ViewComposer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ViewComposer.m; path = Self/Helper/ViewComposer.m; sourceTree = "<group>"; };
@@ -269,9 +276,7 @@
 		8C7159CE1C2FC976005B5715 /* DCFGGetPrivilegeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DCFGGetPrivilegeView.m; path = DCFGGetPrivilegeView/DCFGGetPrivilegeView.m; sourceTree = "<group>"; };
 		8CA4B92C1C24538E00D3CCEC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		8CA4B92E1C2453A200D3CCEC /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
-		8CA4B9341C24540600D3CCEC /* libReveal.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libReveal.dylib; path = ../libReveal.dylib; sourceTree = "<group>"; };
 		8CA4B9361C24541500D3CCEC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		8CA4B9381C24551A00D3CCEC /* Reveal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Reveal.framework; sourceTree = "<group>"; };
 		8CA4B93C1C25996800D3CCEC /* Quick Decide On Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Quick Decide On Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CA4B93F1C25996800D3CCEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
 		8CA4B9411C25996800D3CCEC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -374,6 +379,7 @@
 				8CB7F0841C365FF300087AB7 /* MessageUI.framework in Frameworks */,
 				8CB7F0821C365D1C00087AB7 /* Social.framework in Frameworks */,
 				8C01BC091C267CA200E07508 /* CloudKit.framework in Frameworks */,
+				8C5ED8001C6DF06000F68E51 /* StoreKit.framework in Frameworks */,
 				8CA4B9371C24541500D3CCEC /* CoreGraphics.framework in Frameworks */,
 				8CA4B92F1C2453A200D3CCEC /* libz.tbd in Frameworks */,
 				8CA4B92D1C24538E00D3CCEC /* CFNetwork.framework in Frameworks */,
@@ -450,12 +456,11 @@
 		2EC63DCF1BC0A292001521F7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				8C5ED7FF1C6DF06000F68E51 /* StoreKit.framework */,
 				8CB7F0831C365FF300087AB7 /* MessageUI.framework */,
 				8CB7F0811C365D1C00087AB7 /* Social.framework */,
 				8C01BC081C267CA200E07508 /* CloudKit.framework */,
 				8CA4B9361C24541500D3CCEC /* CoreGraphics.framework */,
-				8CA4B9341C24540600D3CCEC /* libReveal.dylib */,
-				8CA4B9381C24551A00D3CCEC /* Reveal.framework */,
 				8CA4B92E1C2453A200D3CCEC /* libz.tbd */,
 				8CA4B92C1C24538E00D3CCEC /* CFNetwork.framework */,
 				8C1258C01C11C592007FAC62 /* QuartzCore.framework */,
@@ -573,6 +578,7 @@
 		8C1258A01C101122007FAC62 /* self */ = {
 			isa = PBXGroup;
 			children = (
+				8C5ED86F1C6DFA1F00F68E51 /* Store Communicator */,
 				8C6A3ECC1C69AFB500E218B4 /* Intro Registration View */,
 				8CB7F07D1C35430900087AB7 /* Upgrade Handler */,
 				8CB7F07C1C3542DF00087AB7 /* API Communicator */,
@@ -741,6 +747,7 @@
 		8C5697B51C09705100FFB05A /* vendors */ = {
 			isa = PBXGroup;
 			children = (
+				8C5ED8011C6DF29600F68E51 /* RMStore */,
 				8C6A3EBF1C68DC5200E218B4 /* EAIntroView */,
 				8CF9EC301C673C7300469303 /* MBProgressHUD */,
 				8C4FCB751C63A8FD00CEB63A /* Reachability */,
@@ -752,6 +759,24 @@
 				8C12589A1C100890007FAC62 /* KLCPopup */,
 			);
 			name = vendors;
+			sourceTree = "<group>";
+		};
+		8C5ED8011C6DF29600F68E51 /* RMStore */ = {
+			isa = PBXGroup;
+			children = (
+				8C5ED8021C6DF2C300F68E51 /* RMStore.h */,
+				8C5ED8031C6DF2C300F68E51 /* RMStore.m */,
+			);
+			name = RMStore;
+			sourceTree = "<group>";
+		};
+		8C5ED86F1C6DFA1F00F68E51 /* Store Communicator */ = {
+			isa = PBXGroup;
+			children = (
+				8C5ED8701C6DFA5300F68E51 /* StoreCommunicator.h */,
+				8C5ED8711C6DFA5300F68E51 /* StoreCommunicator.m */,
+			);
+			name = "Store Communicator";
 			sourceTree = "<group>";
 		};
 		8C6A3EBF1C68DC5200E218B4 /* EAIntroView */ = {
@@ -955,7 +980,6 @@
 				2EC63DC81BC0A292001521F7 /* Sources */,
 				2EC63DC91BC0A292001521F7 /* Frameworks */,
 				2EC63DCA1BC0A292001521F7 /* Resources */,
-				8CA4B92B1C24537900D3CCEC /* ShellScript */,
 				8CA4B9601C25996900D3CCEC /* Embed Watch Content */,
 			);
 			buildRules = (
@@ -1049,9 +1073,13 @@
 				TargetAttributes = {
 					2EC63DCB1BC0A292001521F7 = {
 						CreatedOnToolsVersion = 7.0.1;
+						DevelopmentTeam = K2T8GJQBE7;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
-								enabled = 0;
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
 							};
 							com.apple.iCloud = {
 								enabled = 0;
@@ -1068,6 +1096,7 @@
 					};
 					8CA4B93B1C25996800D3CCEC = {
 						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = K2T8GJQBE7;
 					};
 					8CA4B9471C25996800D3CCEC = {
 						CreatedOnToolsVersion = 7.1.1;
@@ -1108,7 +1137,6 @@
 				8CB7F0691C351BC700087AB7 /* like_filled.png in Resources */,
 				8CB7F01C1C34FD3500087AB7 /* decide_for_group@3x.png in Resources */,
 				8C6A3ECA1C68DD9F00E218B4 /* decide_what_to_do_intro_pg2.png in Resources */,
-				8CA4B9351C24540600D3CCEC /* libReveal.dylib in Resources */,
 				8CB7F06B1C351BC700087AB7 /* like_filled@3x.png in Resources */,
 				8C6A3ECB1C68DD9F00E218B4 /* decide_what_to_do_intro_pg3.png in Resources */,
 				8CB7F06A1C351BC700087AB7 /* like_filled@2x.png in Resources */,
@@ -1168,22 +1196,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		8CA4B92B1C24537900D3CCEC /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\n\nif [ -n \"${CODE_SIGN_IDENTITY}\" ]; then\ncodesign -fs \"${CODE_SIGN_IDENTITY}\" \"${BUILT_PRODUCTS_DIR}/${FULL_PRODUCT_NAME}/libReveal.dylib\"\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		2EC63DC81BC0A292001521F7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1223,6 +1235,7 @@
 				8C7159CF1C2FC976005B5715 /* DCFGGetPrivilegeView.m in Sources */,
 				8C66A4681C296A02007FBFA3 /* ViewComposer.m in Sources */,
 				8C45AB7B1C165E8C001A6323 /* DecideForMeViewController.m in Sources */,
+				8C5ED8721C6DFA5300F68E51 /* StoreCommunicator.m in Sources */,
 				8C6A3ED41C69B9A500E218B4 /* IntroRegistrationView.m in Sources */,
 				8CB7F0551C3517C200087AB7 /* BONumberTableViewCell.m in Sources */,
 				8C2130221C310ADA002E60BE /* MFLTransformingClock.m in Sources */,
@@ -1243,6 +1256,7 @@
 				8C45AB921C16A9DD001A6323 /* RootTabBarViewController.m in Sources */,
 				8CDAEAB51C37CA1000AD10D1 /* APICommunicator.m in Sources */,
 				8CB7F05A1C3517C200087AB7 /* BOOptionTableViewCell.m in Sources */,
+				8C5ED8041C6DF2C300F68E51 /* RMStore.m in Sources */,
 				8C4ACEA81C34DEB300BBB86D /* CarbonTabSwipeNavigation.m in Sources */,
 				8CB7F0571C3517C200087AB7 /* UILabel+DatePickerCustomization.m in Sources */,
 				8C6A3EC41C68DC6000E218B4 /* EAIntroPage.m in Sources */,
@@ -1407,46 +1421,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"\"$(SYSTEM_APPS_DIR)/Reveal.app/Contents/SharedSupport/iOS-Libraries\"",
-				);
+				CODE_SIGN_IDENTITY = "iPhone Developer: YIngguang Zhang (KRVRBN55T7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YIngguang Zhang (KRVRBN55T7)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/\"Decide/decide what to do\"/Optional/openssl-1.0.1e/lib";
 				INFOPLIST_FILE = "Decide:decide what to do/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Decide:decide",
-					what,
-					to,
-					"do/openssl-1.0.1e/lib",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lz",
-					"-framework",
-					"Reveal\n",
-					"-ObjC",
-					"-lz",
-					"-framework",
-					"Reveal\n",
-					"-ObjC",
-					"-lz",
-					"-framework",
-					"Reveal\n",
-					"-ObjC",
-					"-lz",
-					"-framework",
-					"Reveal\n-ObjC",
-					"-lz",
-					"-framework",
-					Reveal,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "FIStudio.Decide-decide-what-to-do";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/$(PROJECT_NAME)/Optional/openssl-1.0.1e/lib";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "studio.reactive.decide-what-to-do";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Debug;
 		};
@@ -1454,49 +1441,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Decide:decide",
-					what,
-					to,
-					do,
-				);
+				CODE_SIGN_IDENTITY = "iPhone Developer: YIngguang Zhang (KRVRBN55T7)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: YIngguang Zhang (KRVRBN55T7)";
+				FRAMEWORK_SEARCH_PATHS = "\"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Developer/Library/Frameworks\"";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/\"Decide/decide what to do\"/Optional/openssl-1.0.1e/lib";
 				INFOPLIST_FILE = "Decide:decide what to do/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Decide:decide",
-					what,
-					to,
-					"do/openssl-1.0.1e/lib",
-				);
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-lz",
-					"-framework",
-					"Reveal\n",
-					"-ObjC",
-					"-lz",
-					"-framework",
-					"Reveal\n",
-					"-ObjC",
-					"-lz",
-					"-framework",
-					"Reveal\n",
-					"-ObjC",
-					"-lz",
-					"-framework",
-					"Reveal\n-ObjC",
-					"-lz",
-					"-framework",
-					Reveal,
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "FIStudio.Decide-decide-what-to-do";
+				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/$(PROJECT_NAME)/Optional/openssl-1.0.1e/lib";
+				OTHER_LDFLAGS = "";
+				PRODUCT_BUNDLE_IDENTIFIER = "studio.reactive.decide-what-to-do";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				USER_HEADER_SEARCH_PATHS = "";
 			};
 			name = Release;
 		};
@@ -1552,9 +1509,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IBSC_MODULE = Quick_Decide_On_Watch_Extension;
 				INFOPLIST_FILE = "Quick Decide On Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "FIStudio.Decide-decide-what-to-do.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "studio.reactive.decide-what-to-do.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1567,9 +1525,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				IBSC_MODULE = Quick_Decide_On_Watch_Extension;
 				INFOPLIST_FILE = "Quick Decide On Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = "FIStudio.Decide-decide-what-to-do.watchkitapp";
+				PRODUCT_BUNDLE_IDENTIFIER = "studio.reactive.decide-what-to-do.watchkitapp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1583,7 +1542,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Quick Decide On Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "FIStudio.Decide-decide-what-to-do.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "studio.reactive.decide-what-to-do.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1597,7 +1556,7 @@
 			buildSettings = {
 				INFOPLIST_FILE = "Quick Decide On Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "FIStudio.Decide-decide-what-to-do.watchkitapp.watchkitextension";
+				PRODUCT_BUNDLE_IDENTIFIER = "studio.reactive.decide-what-to-do.watchkitapp.watchkitextension";
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
