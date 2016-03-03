@@ -205,6 +205,8 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void)setTabExtraWidth:(CGFloat)extraWidth;
 
+- (void)setSwipeEnabled:(BOOL)enabled;
+
 NS_ASSUME_NONNULL_END
 
 @end

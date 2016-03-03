@@ -165,22 +165,28 @@
         
         [section addCell:[BOButtonTableViewCell cellWithTitle:cellTitle key:nil handler:^(BOButtonTableViewCell* sender){
             
-            [[StoreCommunicator sharedCommunicator]buyUpgradeWithSuccessHandler:^(SKPaymentTransaction* transaction){
+            sender.actionBlock = ^{
                 
-                // show success
-                [Helper showAlertWithTitle:@"Thank you!" Message:@"You have successfully purchased our upgrade package. Now enjoy the benefits" CancelButtonTitle:@"Great!"];
+                [[StoreCommunicator sharedCommunicator]buyUpgradeWithSuccessHandler:^(SKPaymentTransaction* transaction){
+                    
+                    // show success
+                    [Helper showAlertWithTitle:@"Thank you!" Message:@"You have successfully purchased our upgrade package. Now enjoy the benefits" CancelButtonTitle:@"Great!"];
+                    
+                    // set user default to be true
+                    [Helper setUserDefault:kUSER_HAS_PURCHASED_ADDON WithObject:@(YES)];
+                    
+                    
+                }andFailureHandler:^(NSError* error){
+                    
+                    // show failure
+                    [Helper showAlertWithTitle:@"Sorry. Something went wrong" Message:@"Your purchase was not successful, please try later!" CancelButtonTitle:@"Okay"];
+                    
+                    
+                }];
+
                 
-                // set user default to be true
-                [Helper setUserDefault:kUSER_HAS_PURCHASED_ADDON WithObject:@(YES)];
-                
-                
-            }andFailureHandler:^(NSError* error){
-                
-                // show failure
-                [Helper showAlertWithTitle:@"Sorry. Something went wrong" Message:@"Your purchase was not successful, please try later!" CancelButtonTitle:@"Okay"];
-                
-                
-            }];
+            };
+            
             
         }]];
         

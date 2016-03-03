@@ -580,7 +580,6 @@
 			children = (
 				8C5ED86F1C6DFA1F00F68E51 /* Store Communicator */,
 				8C6A3ECC1C69AFB500E218B4 /* Intro Registration View */,
-				8CB7F07D1C35430900087AB7 /* Upgrade Handler */,
 				8CB7F07C1C3542DF00087AB7 /* API Communicator */,
 				8C2130281C3258C9002E60BE /* DCFGResultView */,
 				8C1258B61C1021E3007FAC62 /* Helper */,
@@ -943,13 +942,6 @@
 				8CDAEAB41C37CA1000AD10D1 /* APICommunicator.m */,
 			);
 			name = "API Communicator";
-			sourceTree = "<group>";
-		};
-		8CB7F07D1C35430900087AB7 /* Upgrade Handler */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = "Upgrade Handler";
 			sourceTree = "<group>";
 		};
 		8CE5CA321C2401CB00EFB1E5 /* DCFMTextField */ = {

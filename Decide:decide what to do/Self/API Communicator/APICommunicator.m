@@ -18,9 +18,11 @@
 
 #import "Reachability.h"
 
-static const NSString* domain = @"http://decidewhattodoapi.dev/";
+static const NSString* domainLocal = @"http://decidewhattodoapi.dev/";
 
-static const NSString* domainLocal = @"www.decidewhattodo.mobi";
+static const NSString* domainRemote = @"http://www.decidewhattodo.mobi/";
+
+static const NSString* reachablityRemote = @"www.decidewhattodo.mobi";
 
 static const NSString* baseUrl = @"api/v1";
 
@@ -53,7 +55,7 @@ static const NSString* baseUrl = @"api/v1";
     if (self = [super init]) {
         
         // set base url
-        requestBaseUrl = [NSString stringWithFormat:@"%@%@",domain,baseUrl];
+        requestBaseUrl = [NSString stringWithFormat:@"%@%@",domainRemote,baseUrl];
         
     }
     
@@ -62,9 +64,9 @@ static const NSString* baseUrl = @"api/v1";
 }
 
 #pragma mark - Accessors
--(NSString*)getRequestURLWithHTTP:(BOOL)withHTTP{
+-(NSString*)getReachabilityUrl{
     
-    return withHTTP?requestBaseUrl:domainLocal;
+    return [NSString stringWithString:[reachablityRemote copy]];
     
 }
 

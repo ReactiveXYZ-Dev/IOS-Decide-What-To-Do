@@ -31,6 +31,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [Helper setUserDefault:kUSER_HAS_PURCHASED_ADDON WithObject:@(YES)];
+    
     // check API reachability
     [[APICommunicator sharedCommunicator] setReachability_status:API_UNKNOWN];
     
@@ -38,7 +39,7 @@
         
         NSLog(@"loggin??");
         
-        Reachability* apiChecker = [Reachability reachabilityWithHostName:[[APICommunicator sharedCommunicator]getRequestURLWithHTTP:NO]];
+        Reachability* apiChecker = [Reachability reachabilityWithHostName:[[APICommunicator sharedCommunicator]getReachabilityUrl]];
         
         // reachable -> background load
         apiChecker.reachableBlock = ^(Reachability* reach){
@@ -106,7 +107,7 @@
         [Helper setUserDefault:kUSER_IS_LOGGED_IN_KEY WithObject:@"no"];
         
         // check reachability
-        Reachability* apiChecker = [Reachability reachabilityWithHostName:[[APICommunicator sharedCommunicator]getRequestURLWithHTTP:NO]];
+        Reachability* apiChecker = [Reachability reachabilityWithHostName:[[APICommunicator sharedCommunicator]getReachabilityUrl]];
         
         apiChecker.reachableBlock = ^(Reachability* reach){
           

@@ -68,7 +68,7 @@ typedef NS_ENUM(NSInteger, API_REACHABILITY) {
  * @brief   Get the global request url
  
  */
--(NSString*)getRequestURLWithHTTP:(BOOL)withHTTP;
+-(NSString*)getReachabilityUrl;
 
 /**
  

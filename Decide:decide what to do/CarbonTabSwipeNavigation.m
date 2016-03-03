@@ -139,6 +139,7 @@ UIPageViewControllerDataSource, UIScrollViewDelegate, UIToolbarDelegate>
 	[self.pageViewController.view layoutSubviews];
 }
 
+
 #pragma mark - Actions
 
 - (void)segmentedTapped:(CarbonTabSwipeSegmentedControl *)segment {
@@ -414,7 +415,7 @@ UIPageViewControllerDataSource, UIScrollViewDelegate, UIToolbarDelegate>
 	 options:nil];
 	_pageViewController.delegate = self;
 	_pageViewController.dataSource = self;
-	
+    
 	// delegate scrollview
 	for (UIView *subView in _pageViewController.view.subviews) {
 		if ([subView isKindOfClass:[UIScrollView class]]) {
@@ -677,6 +678,35 @@ UIPageViewControllerDataSource, UIScrollViewDelegate, UIToolbarDelegate>
 
 - (void)setTabExtraWidth:(CGFloat)extraWidth {
 	self.carbonSegmentedControl.tabExtraWidth = extraWidth;
+}
+
+- (void)setSwipeEnabled:(BOOL)enabled{
+    
+    isSwipeLocked = !enabled;
+    
+    if (!enabled) {
+        
+        for (UIScrollView *view in self.pageViewController.view.subviews) {
+            
+            if ([view isKindOfClass:[UIScrollView class]]) {
+                
+                view.scrollEnabled = NO;
+            }
+        }
+        
+    }else{
+        
+        for (UIScrollView *view in self.pageViewController.view.subviews) {
+            
+            if ([view isKindOfClass:[UIScrollView class]]) {
+                
+                view.scrollEnabled = YES;
+            }
+        }
+
+    }
+    
+    
 }
 
 @end

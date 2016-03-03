@@ -55,6 +55,8 @@
     
     nav = [[CarbonTabSwipeNavigation alloc]initWithItems:barItems toolBar:_swipeBar delegate:self];
     
+    [nav setSwipeEnabled:NO];
+    
     [nav insertIntoRootViewController:self
                                              andTargetView:self.view];
     

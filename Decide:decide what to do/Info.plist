@@ -31,11 +31,11 @@
 	<array>
 		<dict>
 			<key>UIApplicationShortcutItemIconFile</key>
-			<string>quick-decide</string>
+			<string>quick_decide</string>
 			<key>UIApplicationShortcutItemTitle</key>
-			<string>net.fistudio.decide-what-to-do.quickdecide</string>
+			<string>Quick Decide</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>quick-decide</string>
+			<string>net.fistudio.decide-what-to-do.quickdecide</string>
 		</dict>
 	</array>
 	<key>UILaunchStoryboardName</key>
